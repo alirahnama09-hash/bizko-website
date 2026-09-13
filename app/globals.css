@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #0b2447;
+  --color-bizko-navy: #0b2447;
+  --color-bizko-navy-light: #1c3f6e;
+  --color-bizko-teal: #16a6a6;
+  --color-bizko-teal-light: #2fc9c9;
+  --font-sans: var(--font-vazirmatn);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
