@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -48,7 +49,15 @@ export default function AboutPage() {
           <div className="absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-bizko-teal-light/5 blur-3xl" />
         </div>
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-16 pb-12 text-center sm:px-6 sm:pt-20 sm:pb-14">
-          <span className="rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
+          <Image
+            src="/bizko-logo.png"
+            alt="لوگوی بیزکو"
+            width={1024}
+            height={1024}
+            priority
+            className="h-20 w-20 rounded-2xl sm:h-24 sm:w-24"
+          />
+          <span className="mt-4 rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
             گروه نرم‌افزاری بیزکو
           </span>
           <h1 className="mt-5 text-4xl font-black tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">
