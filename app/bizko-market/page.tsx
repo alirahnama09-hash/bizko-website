@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { WifiOff } from "lucide-react";
 
 export const metadata: Metadata = {
   title: {
@@ -143,23 +144,19 @@ export default function BizkoMarketPage() {
           {FEATURES.map((feature, i) => {
             const isFeatured = i === FEATURES.length - 1;
             const theme = CARD_THEMES[i % CARD_THEMES.length];
-            return isFeatured ? (
+return isFeatured ? (
               <div
                 key={feature.title}
-                className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1"
+                className="relative flex flex-col rounded-2xl border-2 border-bizko-teal/50 bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-bizko-teal/30 blur-2xl"
-                />
-                <span className="inline-flex rounded-full bg-bizko-teal/25 px-3 py-1 text-xs font-bold text-bizko-teal-light">
+                <span className="inline-flex rounded-full bg-bizko-teal/15 px-3 py-1 text-xs font-bold text-bizko-teal">
                   ویژگی ویژه
                 </span>
-                <span className="mt-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-white">
-                  {feature.icon}
+                <span className="mt-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-bizko-teal text-white">
+                  <WifiOff className="h-9 w-9" strokeWidth={1.8} aria-hidden="true" />
                 </span>
-                <h3 className="mt-5 text-xl font-black text-white">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-white/70">{feature.description}</p>
+                <h3 className="mt-5 text-xl font-black text-bizko-navy">{feature.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-bizko-navy/60">{feature.description}</p>
               </div>
             ) : (
               <div
