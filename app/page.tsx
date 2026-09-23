@@ -56,7 +56,7 @@ export default function Home() {
 
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-14 text-center sm:px-6 sm:py-20 md:grid-cols-2 md:text-right lg:py-24">
           <div>
-            <h1 className="text-4xl font-black leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.12]">
+            <h1 className="font-heading text-4xl font-black leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.12]">
               بیزکو
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base font-light leading-8 text-white/70 sm:text-lg sm:leading-9 md:mx-0 lg:text-xl lg:leading-10">
@@ -163,7 +163,7 @@ export default function Home() {
                 className="h-full w-full object-contain"
               />
             </div>
-            <h2 className="mt-5 text-2xl font-black text-white">بیزکو مارکت</h2>
+            <h2 className="font-heading mt-5 text-2xl font-black text-white">بیزکو مارکت</h2>
             <p className="mt-3 font-light leading-8 text-white/70">
               نرم‌افزار آفلاین مدیریت فروشگاه — موجودی، فروش، بدهی و
               گزارش‌گیری در یک بستر یکپارچه.
@@ -190,7 +190,7 @@ export default function Home() {
                 className="h-full w-full object-contain"
               />
             </div>
-            <h2 className="mt-5 text-2xl font-black text-white">بیزکوفود</h2>
+            <h2 className="font-heading mt-5 text-2xl font-black text-white">بیزکوفود</h2>
             <p className="mt-3 font-light leading-8 text-white/70">
               نرم‌افزار جامع مدیریت کافه و رستوران — از سفارش‌گیری و میزها
               تا انبار و باشگاه مشتریان.

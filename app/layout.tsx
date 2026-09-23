@@ -10,6 +10,13 @@ const vazirmatn = localFont({
   display: "swap",
 });
 
+const estedad = localFont({
+  src: "./fonts/Estedad[wght].woff2",
+  variable: "--font-estedad",
+  weight: "100 900",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://bizko.ir"),
   title: {
@@ -25,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="fa"
       dir="rtl"
-      className={`${vazirmatn.variable} h-full antialiased`}
+      className={`${vazirmatn.variable} ${estedad.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <Header />

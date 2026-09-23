@@ -60,7 +60,7 @@ export default function AboutPage() {
           <span className="mt-4 rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
             گروه نرم‌افزاری بیزکو
           </span>
-          <h1 className="mt-5 text-4xl font-black tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">
+          <h1 className="font-heading mt-5 text-4xl font-black tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">
             درباره بیزکو
           </h1>
           <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/80 sm:mt-5 sm:text-lg sm:leading-9">
@@ -96,7 +96,7 @@ export default function AboutPage() {
 
       <section className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 sm:pb-20">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
+          <h2 className="font-heading text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
             ارزش‌ها و اصول ما
           </h2>
         </div>
@@ -123,7 +123,7 @@ export default function AboutPage() {
       <section className="mx-auto w-full max-w-6xl px-4 pb-14 sm:px-6 sm:pb-20">
         <hr className="mx-auto mb-10 max-w-md border-0 border-t-2 border-bizko-teal/10 sm:mb-12" />
         <div className="rounded-3xl bg-bizko-navy px-6 py-12 text-center text-white sm:py-16">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">
             با محصولات بیزکو آشنا شوید
           </h2>
           <div className="mt-8 flex w-full max-w-xs flex-col gap-3 sm:mx-auto sm:w-auto sm:max-w-none sm:flex-row sm:gap-4">

@@ -110,7 +110,7 @@ export default function BizcofoodPage() {
           <span className="mt-4 rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
             محصولی از گروه نرم‌افزاری بیزکو
           </span>
-          <h1 className="mt-5 text-4xl font-black tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">بیزکوفود</h1>
+          <h1 className="font-heading mt-5 text-4xl font-black tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">بیزکوفود</h1>
           <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/80 sm:mt-5 sm:text-lg sm:leading-9">
 بیزکوفود نرم‌افزاری جامع و تخصصی برای اداره کافه و رستوران است
             — از سفارش‌گیری و مدیریت میزها تا صندوق، انبار مواد اولیه،
@@ -132,7 +132,7 @@ export default function BizcofoodPage() {
 
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
+          <h2 className="font-heading text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
             چرا بیزکوفود؟
           </h2>
           <p className="mt-3 font-light text-bizko-navy/60">
@@ -154,7 +154,7 @@ return isFeatured ? (
                 <span className="mt-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-bizko-teal text-white">
                   <Calculator className="h-9 w-9" strokeWidth={1.8} aria-hidden="true" />
                 </span>
-                <h3 className="mt-5 text-xl font-black text-bizko-navy">{feature.title}</h3>
+                <h3 className="font-heading mt-5 text-xl font-black text-bizko-navy">{feature.title}</h3>
                 <p className="mt-2 text-sm leading-7 text-bizko-navy/60">{feature.description}</p>
               </div>
             ) : (
@@ -180,7 +180,7 @@ return isFeatured ? (
       <section className="mx-auto w-full max-w-6xl px-4 pb-14 sm:px-6 sm:pb-20">
         <hr className="mx-auto mb-10 max-w-md border-0 border-t-2 border-bizko-teal/10 sm:mb-12" />
         <div className="rounded-3xl bg-bizko-navy px-6 py-12 text-center text-white sm:py-16">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">
             آماده‌اید کسب‌وکار خود را حرفه‌ای مدیریت کنید؟
           </h2>
           <p className="mt-4 text-white/70">

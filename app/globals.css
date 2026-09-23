@@ -8,6 +8,7 @@
   --color-bizko-teal: #16a6a6;
   --color-bizko-teal-light: #2fc9c9;
   --font-sans: var(--font-vazirmatn);
+  --font-heading: var(--font-estedad);
 }
 
 body {
