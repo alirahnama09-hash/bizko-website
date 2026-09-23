@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HeroSection from "@/components/HeroSection";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -72,11 +73,7 @@ function TelegramIcon({ className }: { className?: string }) {
 export default function ContactPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#0B2447_0%,#0F3157_45%,#061530_100%)] text-white">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <div className="absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-bizko-teal/10 blur-3xl" />
-          <div className="absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-bizko-teal-light/5 blur-3xl" />
-        </div>
+      <HeroSection>
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-16 pb-12 text-center sm:px-6 sm:pt-20 sm:pb-14">
           <span className="rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
             پشتیبانی و ارتباط با ما
@@ -95,7 +92,7 @@ export default function ContactPage() {
         >
           <path d="M0,24 C180,44 360,10 540,18 C720,26 900,40 1080,28 C1260,16 1350,10 1440,20 L1440,48 L0,48 Z" />
         </svg>
-      </section>
+      </HeroSection>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid gap-8 lg:grid-cols-5">

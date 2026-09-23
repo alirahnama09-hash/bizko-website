@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { Calculator } from "lucide-react";
+import HeroSection from "@/components/HeroSection";
 
 export const metadata: Metadata = {
   title: {
@@ -93,20 +94,22 @@ const CARD_THEMES = [
 export default function BizcofoodPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#0B2447_0%,#0F3157_45%,#061530_100%)] text-white">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <div className="absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-bizko-teal/10 blur-3xl" />
-          <div className="absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-bizko-teal-light/5 blur-3xl" />
-        </div>
+      <HeroSection>
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-16 pb-12 text-center sm:px-6 sm:pt-20 sm:pb-14">
-          <Image
-            src="/bizcofood-logo.png"
-            alt="لوگوی بیزکوفود"
-            width={1254}
-            height={1254}
-            priority
-            className="h-20 w-20 rounded-2xl sm:h-24 sm:w-24"
-          />
+          <div className="relative">
+            <div
+              aria-hidden="true"
+              className="absolute -inset-3 -z-10 rounded-[1.75rem] bg-bizko-teal/20 blur-xl"
+            />
+            <Image
+              src="/bizcofood-logo.png"
+              alt="لوگوی بیزکوفود"
+              width={1254}
+              height={1254}
+              priority
+              className="h-20 w-20 rounded-2xl shadow-[0_14px_40px_-8px_rgba(4,15,31,0.85)] sm:h-24 sm:w-24"
+            />
+          </div>
           <span className="mt-4 rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
             محصولی از گروه نرم‌افزاری بیزکو
           </span>
@@ -128,7 +131,7 @@ export default function BizcofoodPage() {
         >
           <path d="M0,24 C180,44 360,10 540,18 C720,26 900,40 1080,28 C1260,16 1350,10 1440,20 L1440,48 L0,48 Z" />
         </svg>
-      </section>
+      </HeroSection>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <div className="text-center">

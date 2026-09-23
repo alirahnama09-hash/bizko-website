@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import HeroSection from "@/components/HeroSection";
 
 export const metadata: Metadata = {
   title: {
@@ -13,47 +14,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-<section className="relative overflow-hidden bg-[linear-gradient(135deg,#0B2447_0%,#0F3157_45%,#061530_100%)] text-white">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <div className="absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-bizko-teal/10 blur-3xl" />
-          <div className="absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-bizko-teal-light/5 blur-3xl" />
-          <svg
-            className="absolute -bottom-28 -left-20 h-72 w-72 opacity-60"
-            viewBox="0 0 300 300"
-            fill="none"
-          >
-            <circle
-              cx="150"
-              cy="150"
-              r="115"
-              stroke="#16A6A6"
-              strokeOpacity="0.18"
-              strokeWidth="2"
-            />
-            <circle
-              cx="150"
-              cy="150"
-              r="85"
-              stroke="#16A6A6"
-              strokeOpacity="0.12"
-              strokeWidth="1.5"
-            />
-          </svg>
-          <svg
-            className="absolute right-[38%] top-10 hidden h-40 w-40 opacity-50 xl:block"
-            viewBox="0 0 160 160"
-            fill="none"
-          >
-            <path
-              d="M30 130 C70 60 110 60 135 35"
-              stroke="#16A6A6"
-              strokeOpacity="0.15"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div>
-
+<HeroSection>
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-14 text-center sm:px-6 sm:py-20 md:grid-cols-2 md:text-right lg:py-24">
           <div>
             <h1 className="font-heading text-4xl font-black leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.12]">
@@ -145,7 +106,7 @@ export default function Home() {
         >
           <path d="M0,24 C180,44 360,10 540,18 C720,26 900,40 1080,28 C1260,16 1350,10 1440,20 L1440,48 L0,48 Z" />
         </svg>
-      </section>
+      </HeroSection>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid gap-6 sm:grid-cols-2 lg:gap-8">
