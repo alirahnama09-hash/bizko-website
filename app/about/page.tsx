@@ -42,22 +42,35 @@ const VALUES = [
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-bizko-navy text-white">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-24">
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#0B2447_0%,#0F3157_45%,#061530_100%)] text-white">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-bizko-teal/10 blur-3xl" />
+          <div className="absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-bizko-teal-light/5 blur-3xl" />
+        </div>
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-16 pb-12 text-center sm:px-6 sm:pt-20 sm:pb-14">
           <span className="rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
             گروه نرم‌افزاری بیزکو
           </span>
-          <h1 className="mt-5 text-3xl font-black sm:mt-6 sm:text-5xl">
+          <h1 className="mt-5 text-4xl font-black tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">
             درباره بیزکو
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-white/85 sm:mt-5 sm:text-lg sm:leading-9">
+          <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/80 sm:mt-5 sm:text-lg sm:leading-9">
             تیمی که نرم‌افزارهای مدیریت کسب‌وکار می‌سازد
           </p>
         </div>
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 left-0 h-10 w-full text-white"
+          viewBox="0 0 1440 48"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path d="M0,24 C180,44 360,10 540,18 C720,26 900,40 1080,28 C1260,16 1350,10 1440,20 L1440,48 L0,48 Z" />
+        </svg>
       </section>
 
-      <section className="mx-auto w-full max-w-3xl px-4 py-14 text-justify sm:px-6 sm:py-20">
-        <div className="space-y-5 text-base leading-9 text-bizko-navy/80 sm:text-lg sm:leading-10">
+      <section className="mx-auto w-full max-w-3xl px-4 py-12 text-justify sm:px-6 sm:py-16">
+        <div className="space-y-5 text-base font-light leading-9 text-bizko-navy/60 sm:text-lg sm:leading-10">
           <p>
             بیزکو با هدف ساخت نرم‌افزارهایی شکل گرفت که صاحبان
             کسب‌وکار بتوانند واقعاً در فعالیت روزمره خود از آن‌ها استفاده
@@ -72,9 +85,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-4 pb-20 sm:px-6">
+      <section className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 sm:pb-20">
         <div className="text-center">
-          <h2 className="text-2xl font-extrabold text-bizko-navy sm:text-3xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
             ارزش‌ها و اصول ما
           </h2>
         </div>
@@ -98,9 +111,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 sm:pb-24">
+      <section className="mx-auto w-full max-w-6xl px-4 pb-14 sm:px-6 sm:pb-20">
+        <hr className="mx-auto mb-10 max-w-md border-0 border-t-2 border-bizko-teal/10 sm:mb-12" />
         <div className="rounded-3xl bg-bizko-navy px-6 py-12 text-center text-white sm:py-16">
-          <h2 className="text-2xl font-extrabold sm:text-3xl">
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             با محصولات بیزکو آشنا شوید
           </h2>
           <div className="mt-8 flex w-full max-w-xs flex-col gap-3 sm:mx-auto sm:w-auto sm:max-w-none sm:flex-row sm:gap-4">

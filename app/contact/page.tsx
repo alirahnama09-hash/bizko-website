@@ -72,29 +72,42 @@ function TelegramIcon({ className }: { className?: string }) {
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-bizko-navy text-white">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-24">
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#0B2447_0%,#0F3157_45%,#061530_100%)] text-white">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-bizko-teal/10 blur-3xl" />
+          <div className="absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-bizko-teal-light/5 blur-3xl" />
+        </div>
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-16 pb-12 text-center sm:px-6 sm:pt-20 sm:pb-14">
           <span className="rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
             پشتیبانی و ارتباط با ما
           </span>
-          <h1 className="mt-5 text-3xl font-black sm:mt-6 sm:text-5xl">تماس با ما</h1>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-white/85 sm:mt-5 sm:text-lg sm:leading-9">
+          <h1 className="mt-5 text-4xl font-black tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">تماس با ما</h1>
+          <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/80 sm:mt-5 sm:text-lg sm:leading-9">
             سوالی دارید؟ خوشحال می‌شویم نظرات و سوالات شما را بشنویم.
           </p>
         </div>
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 left-0 h-10 w-full text-white"
+          viewBox="0 0 1440 48"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path d="M0,24 C180,44 360,10 540,18 C720,26 900,40 1080,28 C1260,16 1350,10 1440,20 L1440,48 L0,48 Z" />
+        </svg>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+      <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid gap-8 lg:grid-cols-5">
           <div className="rounded-2xl border border-bizko-teal/25 bg-white p-6 shadow-sm sm:p-8 lg:col-span-3">
-            <h2 className="text-xl font-extrabold text-bizko-navy sm:text-2xl">
+            <h2 className="text-2xl font-extrabold tracking-tight text-bizko-navy sm:text-3xl">
               پیام بدهید
             </h2>
             <ContactForm />
           </div>
 
           <div className="rounded-2xl bg-bizko-navy p-6 text-white sm:p-8 lg:col-span-2">
-            <h2 className="text-xl font-extrabold sm:text-2xl">اطلاعات تماس</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">اطلاعات تماس</h2>
             <ul className="mt-6 flex flex-row flex-wrap items-center gap-6">
               <li>
                 <a

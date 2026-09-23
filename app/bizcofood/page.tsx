@@ -92,8 +92,12 @@ const CARD_THEMES = [
 export default function BizcofoodPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-bizko-navy text-white">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-16 pb-12 text-center sm:px-6 sm:pt-20 sm:pb-14">
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#0B2447_0%,#0F3157_45%,#061530_100%)] text-white">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-bizko-teal/10 blur-3xl" />
+          <div className="absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-bizko-teal-light/5 blur-3xl" />
+        </div>
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-16 pb-12 text-center sm:px-6 sm:pt-20 sm:pb-14">
           <Image
             src="/bizcofood-logo.png"
             alt="لوگوی بیزکوفود"
@@ -105,7 +109,7 @@ export default function BizcofoodPage() {
           <span className="mt-4 rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
             محصولی از گروه نرم‌افزاری بیزکو
           </span>
-          <h1 className="mt-5 text-3xl font-black tracking-tight sm:mt-6 sm:text-5xl">بیزکوفود</h1>
+          <h1 className="mt-5 text-4xl font-black tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">بیزکوفود</h1>
           <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/80 sm:mt-5 sm:text-lg sm:leading-9">
 بیزکوفود نرم‌افزاری جامع و تخصصی برای اداره کافه و رستوران است
             — از سفارش‌گیری و مدیریت میزها تا صندوق، انبار مواد اولیه،
