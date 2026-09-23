@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -148,17 +149,20 @@ export default function Home() {
 
       <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid gap-6 sm:grid-cols-2 lg:gap-8">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1">
+          <div className="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-bizko-teal/30 blur-2xl"
             />
-            <span className="inline-flex rounded-full bg-bizko-teal/25 px-3 py-1 text-xs font-bold text-bizko-teal-light">
-              ویژگی ویژه
-            </span>
-            <span className="mt-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-2xl font-black text-white">
-              م
-            </span>
+            <div className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-white/15">
+              <Image
+                src="/bizko-market-logo.png"
+                alt="لوگوی بیزکو مارکت"
+                width={1254}
+                height={1254}
+                className="h-full w-full object-contain"
+              />
+            </div>
             <h2 className="mt-5 text-2xl font-black text-white">بیزکو مارکت</h2>
             <p className="mt-3 font-light leading-8 text-white/70">
               نرم‌افزار آفلاین مدیریت فروشگاه — موجودی، فروش، بدهی و
@@ -166,24 +170,34 @@ export default function Home() {
             </p>
             <Link
               href="/bizko-market"
-              className="mt-6 inline-flex items-center rounded-full bg-bizko-teal px-7 py-2.5 text-sm font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light"
+              className="mt-6 inline-flex items-center self-start rounded-full bg-bizko-teal px-7 py-2.5 text-sm font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light"
             >
               بیشتر بدانید
             </Link>
           </div>
 
-          <div className="flex flex-col rounded-2xl border border-bizko-teal/30 bg-gradient-to-br from-bizko-teal/10 to-bizko-navy/5 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-bizko-navy/10 text-2xl font-black text-bizko-navy">
-              ف
-            </span>
-            <h2 className="mt-5 text-2xl font-extrabold text-bizko-navy">بیزکوفود</h2>
-            <p className="mt-3 font-light leading-8 text-bizko-navy/60">
+          <div className="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-bizko-teal/30 blur-2xl"
+            />
+            <div className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-white/15">
+              <Image
+                src="/bizcofood-logo.png"
+                alt="لوگوی بیزکوفود"
+                width={1254}
+                height={1254}
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <h2 className="mt-5 text-2xl font-black text-white">بیزکوفود</h2>
+            <p className="mt-3 font-light leading-8 text-white/70">
               نرم‌افزار جامع مدیریت کافه و رستوران — از سفارش‌گیری و میزها
               تا انبار و باشگاه مشتریان.
             </p>
             <Link
               href="/bizcofood"
-              className="mt-6 inline-flex items-center rounded-full bg-bizko-navy px-7 py-2.5 text-sm font-bold text-white transition-colors hover:bg-bizko-navy-light"
+              className="mt-6 inline-flex items-center self-start rounded-full bg-bizko-teal px-7 py-2.5 text-sm font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light"
             >
               بیشتر بدانید
             </Link>
