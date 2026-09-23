@@ -135,7 +135,7 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/bizcofood"
-              className="w-full rounded-full border border-white/40 px-8 py-3 text-center font-bold text-white transition-colors hover:border-white hover:bg-white/10 sm:w-auto"
+              className="w-full rounded-full bg-bizko-teal px-8 py-3 text-center font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light sm:w-auto"
             >
               بیزکوفود
             </Link>
