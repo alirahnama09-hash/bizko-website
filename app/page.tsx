@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
-import ScreenshotFrame from "@/components/ScreenshotFrame";
 
 export const metadata: Metadata = {
   title: {
@@ -44,11 +43,26 @@ export default function Home() {
 
           <div className="relative mx-auto hidden w-full max-w-lg md:block">
             <div className="absolute -inset-6 -z-10 rounded-full bg-bizko-teal/10 blur-2xl" />
-            <ScreenshotFrame
-              src="/screenshots/bizko-market-dashboard.png"
-              alt="اسکرین‌شات داشبورد بیزکو مارکت"
-              title="بیزکو مارکت — داشبورد فروشگاه"
-            />
+            <div className="overflow-hidden rounded-2xl border border-white/15 bg-white/5 backdrop-blur-sm">
+              <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
+                <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+                <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+                <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+                <span className="mr-3 text-xs font-medium text-white/60">
+                  بیزکو مارکت — داشبورد فروشگاه
+                </span>
+              </div>
+              <div className="flex h-56 items-center justify-center p-6 sm:h-64">
+                <Image
+                  src="/bizko-market-logo.png"
+                  alt="لوگوی بیزکو مارکت"
+                  width={1254}
+                  height={1254}
+                  priority
+                  className="h-full w-auto max-w-full rounded-2xl object-contain drop-shadow-[0_10px_30px_rgba(16,166,166,0.35)]"
+                />
+              </div>
+            </div>
             <div className="absolute -bottom-8 -left-8 -z-10 h-40 w-40 rotate-[12deg] rounded-2xl border border-bizko-teal/30 bg-bizko-teal/5 backdrop-blur-sm" />
           </div>
         </div>
