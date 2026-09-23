@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ const FEATURES = [
     title: "مدیریت موجودی با هشدار هوشمند کمبود کالا",
     description: "کنترل لحظه‌ای موجودی کالاها و هشدار به‌موقع کمبود کالا.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-6 w-6">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-9 w-9">
         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
       </svg>
     ),
@@ -22,7 +23,7 @@ const FEATURES = [
     title: "داشبورد زنده با نمودار فروش و دسته‌بندی",
     description: "داشبورد بصری با نمودار روند فروش و نمودار دسته‌بندی کالا.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-6 w-6">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-9 w-9">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
       </svg>
     ),
@@ -31,7 +32,7 @@ const FEATURES = [
     title: "گزارش‌گیری روزانه، هفتگی، ماهانه و سالانه",
     description: "گزارش‌های متنوع با بازه‌های روزانه، هفتگی، ماهانه و سالانه.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-6 w-6">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-9 w-9">
         <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 3.75V6a1.5 1.5 0 001.5 1.5h1.5m-10.5-3H6.75A1.875 1.875 0 004.875 6.375v11.25c0 1.035.84 1.875 1.875 1.875h10.5c1.035 0 1.875-.84 1.875-1.875V9.375c0-.621-.247-1.217-.686-1.656l-4.033-4.033A2.34 2.34 0 0012.621 3H12a1.875 1.875 0 00-1.875 1.875v.375M12 11.25v6m-3-3h6" />
       </svg>
     ),
@@ -40,7 +41,7 @@ const FEATURES = [
     title: "مدیریت بدهی و اطلاعات مشتریان",
     description: "ثبت و پیگیری بدهی‌ها و مدیریت آسان اطلاعات مشتریان.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-6 w-6">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-9 w-9">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
       </svg>
     ),
@@ -49,7 +50,7 @@ const FEATURES = [
     title: "پشتیبان‌گیری و بازیابی خودکار اطلاعات",
     description: "پشتیبان‌گیری و بازیابی ایمن اطلاعات در هر زمان که نیاز دارید.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-6 w-6">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-9 w-9">
         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
       </svg>
     ),
@@ -58,10 +59,33 @@ const FEATURES = [
     title: "کاملاً آفلاین، بدون وابستگی به اینترنت",
     description: "بدون نیاز به اینترنت، تمام امکانات در اختیار فروشگاه شماست.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-6 w-6">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true" className="h-9 w-9">
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.538c-1.022-.883-1.088-2.328.144-3.012A5.25 5.25 0 0018.75 4.5H5.25A5.25 5.25 0 003 9.5c1.22.684 1.154 2.119-.137 3.012A4.5 4.5 0 004.5 19.5h15a4.5 4.5 0 000-8.25c-.75-3.188-3.54-5.25-6.75-5.25H7.5c-1.32 0-2.592.536-3.487 1.492M16.5 5.25h.004m-8.254.004h.004" />
       </svg>
     ),
+  },
+];
+
+const CARD_THEMES = [
+  {
+    card: "border border-bizko-navy/10 bg-white",
+    icon: "bg-bizko-teal/10 text-bizko-teal",
+  },
+  {
+    card: "border border-bizko-teal/30 bg-gradient-to-br from-bizko-teal/10 to-bizko-navy/5",
+    icon: "bg-bizko-navy/10 text-bizko-navy",
+  },
+  {
+    card: "border border-bizko-navy/10 bg-white",
+    icon: "bg-bizko-teal/10 text-bizko-teal",
+  },
+  {
+    card: "border-2 border-bizko-teal/50 bg-white",
+    icon: "bg-bizko-teal/15 text-bizko-teal",
+  },
+  {
+    card: "border border-bizko-teal/30 bg-gradient-to-br from-bizko-teal/10 to-bizko-navy/5",
+    icon: "bg-bizko-navy/10 text-bizko-navy",
   },
 ];
 
@@ -70,7 +94,15 @@ export default function BizkoMarketPage() {
     <>
       <section className="bg-bizko-navy text-white">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-24">
-          <span className="rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
+          <Image
+            src="/bizko-market-logo.png"
+            alt="لوگوی بیزکو مارکت"
+            width={1254}
+            height={1254}
+            priority
+            className="h-20 w-20 rounded-2xl sm:h-24 sm:w-24"
+          />
+          <span className="mt-4 rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
             محصولی از گروه نرم‌افزاری بیزکو
           </span>
           <h1 className="mt-5 text-3xl font-black sm:mt-6 sm:text-5xl">بیزکو مارکت</h1>
@@ -94,23 +126,45 @@ export default function BizkoMarketPage() {
             همه چیزهایی که یک فروشگاه برای مدیریت حرفه‌ای به آن نیاز دارد.
           </p>
         </div>
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {FEATURES.map((feature) => (
-            <div
-              key={feature.title}
-              className="rounded-2xl border border-bizko-teal/25 bg-white p-6 transition-colors hover:border-bizko-teal"
-            >
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-bizko-teal/10 text-bizko-teal">
-                {feature.icon}
-              </span>
-              <h3 className="mt-5 text-lg font-bold text-bizko-navy">
-                {feature.title}
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-bizko-navy/70">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+          {FEATURES.map((feature, i) => {
+            const isFeatured = i === FEATURES.length - 1;
+            const theme = CARD_THEMES[i % CARD_THEMES.length];
+            return isFeatured ? (
+              <div
+                key={feature.title}
+                className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1"
+              >
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-bizko-teal/30 blur-2xl"
+                />
+                <span className="inline-flex rounded-full bg-bizko-teal/25 px-3 py-1 text-xs font-bold text-bizko-teal-light">
+                  ویژگی ویژه
+                </span>
+                <span className="mt-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-white">
+                  {feature.icon}
+                </span>
+                <h3 className="mt-5 text-xl font-black text-white">{feature.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-white/75">{feature.description}</p>
+              </div>
+            ) : (
+              <div
+                key={feature.title}
+                className={`flex flex-col rounded-2xl ${theme.card} p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
+              >
+                <span
+                  className={`flex h-14 w-14 items-center justify-center rounded-2xl ${theme.icon}`}
+                >
+                  {feature.icon}
+                </span>
+                <h3 className="mt-5 text-lg font-bold text-bizko-navy">{feature.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-bizko-navy/70">
+                  {feature.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </section>
 

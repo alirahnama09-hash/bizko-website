@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -17,9 +18,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-3">
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-bizko-navy text-base font-bold text-white sm:h-10 sm:w-10 sm:text-lg">
-            ب
-          </span>
+          <Image
+            src="/bizko-logo.png"
+            alt="لوگوی بیزکو"
+            width={40}
+            height={40}
+            priority
+            className="h-9 w-9 shrink-0 sm:h-10 sm:w-10"
+          />
           <span className="whitespace-nowrap text-base font-extrabold text-bizko-navy sm:text-xl">
             بیزکو
           </span>
