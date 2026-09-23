@@ -11,6 +11,7 @@ const vazirmatn = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bizko.ir"),
   title: {
     default: "بیزکو",
     template: "%s | بیزکو",

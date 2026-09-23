@@ -16,8 +16,9 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-28">
           <h1 className="text-4xl font-black sm:text-6xl">بیزکو</h1>
           <p className="mt-4 max-w-2xl text-base leading-8 text-white/85 sm:mt-6 sm:text-lg sm:leading-10">
-            مجموعه نرم‌افزارهای مدیریت کسب‌وکار برای فروشگاه‌ها و کافه‌ها و
-            رستوران‌ها
+بیزکو مجموعه‌ای از نرم‌افزارهای تخصصی برای مدیریت کسب‌وکارهای کوچک
+            و متوسط است — از فروشگاه‌ها تا کافه و رستوران‌ها. هر محصول بیزکو
+            متناسب با نیاز واقعی همان صنف طراحی و توسعه یافته است.
           </p>
           <div className="mt-8 flex w-full max-w-xs flex-col gap-3 sm:mt-10 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4">
             <Link
@@ -46,7 +47,8 @@ export default function Home() {
               بیزکو مارکت
             </h2>
             <p className="mt-3 leading-8 text-bizko-navy/70">
-              نرم‌افزار آفلاین مدیریت فروشگاه
+              نرم‌افزار آفلاین مدیریت فروشگاه — موجودی، فروش، بدهی و
+              گزارش‌گیری در یک بستر یکپارچه.
             </p>
             <Link
               href="/bizko-market"
@@ -64,7 +66,8 @@ export default function Home() {
               بیزکوفود
             </h2>
             <p className="mt-3 leading-8 text-bizko-navy/70">
-              نرم‌افزار مدیریت کافه و رستوران
+              نرم‌افزار جامع مدیریت کافه و رستوران — از سفارش‌گیری و میزها
+              تا انبار و باشگاه مشتریان.
             </p>
             <Link
               href="/bizcofood"
