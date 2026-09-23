@@ -53,9 +53,9 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-16 text-center sm:px-6 sm:py-24 md:grid-cols-2 md:text-right lg:py-28">
+        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-14 text-center sm:px-6 sm:py-20 md:grid-cols-2 md:text-right lg:py-24">
           <div>
-            <h1 className="text-4xl font-black leading-[1.15] text-white sm:text-5xl lg:text-6xl lg:leading-[1.12]">
+            <h1 className="text-4xl font-black leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.12]">
               بیزکو
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base font-light leading-8 text-white/70 sm:text-lg sm:leading-9 md:mx-0 lg:text-xl lg:leading-10">
@@ -135,9 +135,18 @@ export default function Home() {
             <div className="absolute -bottom-8 -left-8 -z-10 h-40 w-40 rotate-[12deg] rounded-2xl border border-bizko-teal/30 bg-bizko-teal/5 backdrop-blur-sm" />
           </div>
         </div>
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 left-0 h-10 w-full text-white"
+          viewBox="0 0 1440 48"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path d="M0,24 C180,44 360,10 540,18 C720,26 900,40 1080,28 C1260,16 1350,10 1440,20 L1440,48 L0,48 Z" />
+        </svg>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+      <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid gap-6 sm:grid-cols-2 lg:gap-8">
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1">
             <div
@@ -151,7 +160,7 @@ export default function Home() {
               م
             </span>
             <h2 className="mt-5 text-2xl font-black text-white">بیزکو مارکت</h2>
-            <p className="mt-3 leading-8 text-white/75">
+            <p className="mt-3 font-light leading-8 text-white/70">
               نرم‌افزار آفلاین مدیریت فروشگاه — موجودی، فروش، بدهی و
               گزارش‌گیری در یک بستر یکپارچه.
             </p>
@@ -168,7 +177,7 @@ export default function Home() {
               ف
             </span>
             <h2 className="mt-5 text-2xl font-extrabold text-bizko-navy">بیزکوفود</h2>
-            <p className="mt-3 leading-8 text-bizko-navy/70">
+            <p className="mt-3 font-light leading-8 text-bizko-navy/60">
               نرم‌افزار جامع مدیریت کافه و رستوران — از سفارش‌گیری و میزها
               تا انبار و باشگاه مشتریان.
             </p>

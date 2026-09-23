@@ -92,8 +92,8 @@ const CARD_THEMES = [
 export default function BizcofoodPage() {
   return (
     <>
-      <section className="bg-bizko-navy text-white">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-24">
+      <section className="relative overflow-hidden bg-bizko-navy text-white">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-16 pb-12 text-center sm:px-6 sm:pt-20 sm:pb-14">
           <Image
             src="/bizcofood-logo.png"
             alt="لوگوی بیزکوفود"
@@ -105,8 +105,8 @@ export default function BizcofoodPage() {
           <span className="mt-4 rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
             محصولی از گروه نرم‌افزاری بیزکو
           </span>
-          <h1 className="mt-5 text-3xl font-black sm:mt-6 sm:text-5xl">بیزکوفود</h1>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-white/85 sm:mt-5 sm:text-lg sm:leading-9">
+          <h1 className="mt-5 text-3xl font-black tracking-tight sm:mt-6 sm:text-5xl">بیزکوفود</h1>
+          <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/80 sm:mt-5 sm:text-lg sm:leading-9">
 بیزکوفود نرم‌افزاری جامع و تخصصی برای اداره کافه و رستوران است
             — از سفارش‌گیری و مدیریت میزها تا صندوق، انبار مواد اولیه،
             باشگاه مشتریان وفادار و محاسبه دقیق سود و زیان. مدیریت پرسنل و
@@ -114,18 +114,27 @@ export default function BizcofoodPage() {
             مالی نیز در همین یک نرم‌افزار گرد آمده‌اند.
           </p>
         </div>
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 left-0 h-10 w-full text-white"
+          viewBox="0 0 1440 48"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path d="M0,24 C180,44 360,10 540,18 C720,26 900,40 1080,28 C1260,16 1350,10 1440,20 L1440,48 L0,48 Z" />
+        </svg>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <div className="text-center">
-          <h2 className="text-2xl font-extrabold text-bizko-navy sm:text-3xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
             چرا بیزکوفود؟
           </h2>
-          <p className="mt-3 text-bizko-navy/70">
+          <p className="mt-3 font-light text-bizko-navy/60">
             همه چیزهایی که یک کافه یا رستوران برای مدیریت حرفه‌ای به آن نیاز دارد.
           </p>
         </div>
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
           {FEATURES.map((feature, i) => {
             const isFeatured = i === FEATURES.length - 1;
             const theme = CARD_THEMES[i % CARD_THEMES.length];
@@ -145,7 +154,7 @@ export default function BizcofoodPage() {
                   {feature.icon}
                 </span>
                 <h3 className="mt-5 text-xl font-black text-white">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-white/75">{feature.description}</p>
+                <p className="mt-2 text-sm leading-7 text-white/70">{feature.description}</p>
               </div>
             ) : (
               <div
@@ -157,8 +166,8 @@ export default function BizcofoodPage() {
                 >
                   {feature.icon}
                 </span>
-                <h3 className="mt-5 text-lg font-bold text-bizko-navy">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-bizko-navy/70">
+                <h3 className="mt-5 text-lg font-extrabold text-bizko-navy">{feature.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-bizko-navy/60">
                   {feature.description}
                 </p>
               </div>
@@ -167,12 +176,13 @@ export default function BizcofoodPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 sm:pb-24">
+      <section className="mx-auto w-full max-w-6xl px-4 pb-14 sm:px-6 sm:pb-20">
+        <hr className="mx-auto mb-10 max-w-md border-0 border-t-2 border-bizko-teal/10 sm:mb-12" />
         <div className="rounded-3xl bg-bizko-navy px-6 py-12 text-center text-white sm:py-16">
-          <h2 className="text-2xl font-extrabold sm:text-3xl">
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             آماده‌اید کسب‌وکار خود را حرفه‌ای مدیریت کنید؟
           </h2>
-          <p className="mt-4 text-white/80">
+          <p className="mt-4 text-white/70">
             با ما در تماس باشید و اولین قدم را برای مدیریت آسان‌تر بردارید.
           </p>
           <a
