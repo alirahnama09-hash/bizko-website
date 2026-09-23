@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { WifiOff } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
+import ScreenshotFrame from "@/components/ScreenshotFrame";
 
 export const metadata: Metadata = {
   title: {
@@ -95,7 +96,7 @@ export default function BizkoMarketPage() {
   return (
     <>
       <HeroSection>
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-16 pb-12 text-center sm:px-6 sm:pt-20 sm:pb-14">
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-16 pb-16 text-center sm:px-6 sm:pt-20 sm:pb-20">
           <div className="relative">
             <div
               aria-hidden="true"
@@ -122,6 +123,13 @@ export default function BizkoMarketPage() {
             پشتیبان‌گیری خودکار از اطلاعات — بدون نیاز به اتصال اینترنت و
             به‌صورت کامل روی سیستم فروشگاه.
           </p>
+          <div className="mt-10 w-full max-w-3xl">
+            <ScreenshotFrame
+              src="/screenshots/bizko-market-home.png"
+              alt="اسکرین‌شات صفحه اصلی بیزکو مارکت"
+              title="بیزکو مارکت — نرم‌افزار مدیریت فروشگاه"
+            />
+          </div>
         </div>
         <svg
           aria-hidden="true"
@@ -178,6 +186,31 @@ return isFeatured ? (
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+        <div className="text-center">
+          <h2 className="font-heading text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
+            تصاویری از محیط نرم‌افزار
+          </h2>
+          <p className="mt-3 font-light text-bizko-navy/60">
+            نمایی واقعی از بیزکو مارکت در کار روزمره فروشگاه
+          </p>
+        </div>
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <ScreenshotFrame
+            variant="light"
+            src="/screenshots/bizko-market-dashboard.png"
+            alt="اسکرین‌شات داشبورد بیزکو مارکت"
+            title="داشبورد فروشگاه"
+          />
+          <ScreenshotFrame
+            variant="light"
+            src="/screenshots/bizko-market-home.png"
+            alt="اسکرین‌شات صفحه اصلی بیزکو مارکت"
+            title="صفحه اصلی سیستم"
+          />
         </div>
       </section>
 

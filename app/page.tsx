@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
+import ScreenshotFrame from "@/components/ScreenshotFrame";
 
 export const metadata: Metadata = {
   title: {
@@ -41,59 +42,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto hidden w-full max-w-md md:block">
+          <div className="relative mx-auto hidden w-full max-w-lg md:block">
             <div className="absolute -inset-6 -z-10 rounded-full bg-bizko-teal/10 blur-2xl" />
-            <div className="relative rounded-2xl border border-white/15 bg-white/5 p-5 shadow-[0_20px_60px_-15px_rgba(4,15,31,0.9)] backdrop-blur-sm sm:p-6">
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <div className="flex items-center gap-3">
-                  <span className="h-9 w-9 rounded-xl bg-gradient-to-br from-bizko-teal-light to-bizko-teal" />
-                  <div className="text-right">
-                    <p className="text-sm font-bold text-white">بیزکو مارکت</p>
-                    <p className="text-xs text-white/50">داشبورد فروشگاه</p>
-                  </div>
-                </div>
-                <span className="rounded-full bg-bizko-teal/20 px-3 py-1 text-xs font-bold text-bizko-teal-light">
-                  فروش امروز: ۱۲٬۴۸۰٬۰۰۰
-                </span>
-              </div>
-              <ul className="mt-4 space-y-3">
-                <li className="flex items-center justify-between text-sm">
-                  <span className="flex items-center gap-2 text-white/80">
-                    <span className="h-2.5 w-2.5 rounded-full bg-bizko-teal" />
-                    قند و چای — موجودی
-                  </span>
-                  <span className="font-bold text-white/90">۸۴</span>
-                </li>
-                <li className="flex items-center justify-between text-sm">
-                  <span className="flex items-center gap-2 text-white/80">
-                    <span className="h-2.5 w-2.5 rounded-full bg-bizko-teal-light" />
-                    لبنیات — فروش امروز
-                  </span>
-                  <span className="font-bold text-white/90">۲٬۳۱۰٬۰۰۰</span>
-                </li>
-                <li className="flex items-center justify-between text-sm">
-                  <span className="flex items-center gap-2 text-white/80">
-                    <span className="h-2.5 w-2.5 rounded-full bg-bizko-navy-light" />
-                    بدهی مشتریان
-                  </span>
-                  <span className="font-bold text-white/90">۴۸۵٬۰۰۰</span>
-                </li>
-              </ul>
-              <div className="mt-5 grid grid-cols-3 gap-2">
-                <div className="rounded-xl bg-white/5 p-3 text-center">
-                  <p className="text-lg font-black text-bizko-teal-light">۴۳</p>
-                  <p className="text-[11px] text-white/50">فاکتور امروز</p>
-                </div>
-                <div className="rounded-xl bg-white/5 p-3 text-center">
-                  <p className="text-lg font-black text-bizko-teal-light">۱۲</p>
-                  <p className="text-[11px] text-white/50">مشتری جدید</p>
-                </div>
-                <div className="rounded-xl bg-white/5 p-3 text-center">
-                  <p className="text-lg font-black text-bizko-teal-light">۹۸٪</p>
-                  <p className="text-[11px] text-white/50">رضایت</p>
-                </div>
-              </div>
-            </div>
+            <ScreenshotFrame
+              src="/screenshots/bizko-market-dashboard.png"
+              alt="اسکرین‌شات داشبورد بیزکو مارکت"
+              title="بیزکو مارکت — داشبورد فروشگاه"
+            />
             <div className="absolute -bottom-8 -left-8 -z-10 h-40 w-40 rotate-[12deg] rounded-2xl border border-bizko-teal/30 bg-bizko-teal/5 backdrop-blur-sm" />
           </div>
         </div>
