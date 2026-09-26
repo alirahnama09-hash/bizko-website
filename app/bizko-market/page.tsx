@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { WifiOff } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
@@ -223,12 +224,12 @@ return isFeatured ? (
           <p className="mt-4 text-white/70">
             با ما در تماس باشید و اولین قدم را برای مدیریت آسان‌تر بردارید.
           </p>
-          <a
-            href="mailto:info@bizko.ir"
+          <Link
+            href="/contact"
             className="mt-6 inline-block w-full rounded-full bg-bizko-teal px-8 py-3 text-center font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light sm:mt-8 sm:w-auto"
           >
             دریافت مشاوره
-          </a>
+          </Link>
         </div>
       </section>
     </>
