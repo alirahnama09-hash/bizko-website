@@ -233,7 +233,7 @@ return isFeatured ? (
             </Link>
             <Link
               href="/bizko-market/demo"
-              className="w-full rounded-full border border-bizko-teal/60 px-8 py-3 text-center font-bold text-bizko-teal-light transition-colors hover:bg-bizko-teal/10 sm:w-auto"
+              className="w-full rounded-full bg-bizko-teal px-8 py-3 text-center font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light sm:w-auto"
             >
               دریافت دمو
             </Link>
