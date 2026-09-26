@@ -223,12 +223,20 @@ return isFeatured ? (
           <p className="mt-4 text-white/70">
             با ما در تماس باشید و اولین قدم را برای مدیریت آسان‌تر بردارید.
           </p>
-          <Link
-            href="/contact"
-            className="mt-6 inline-block w-full rounded-full bg-bizko-teal px-8 py-3 text-center font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light sm:mt-8 sm:w-auto"
-          >
-            دریافت مشاوره
-          </Link>
+          <div className="mt-6 flex w-full max-w-xs flex-col gap-3 sm:mx-auto sm:mt-8 sm:w-auto sm:max-w-none sm:flex-row sm:justify-center sm:gap-4">
+            <Link
+              href="/contact"
+              className="w-full rounded-full bg-bizko-teal px-8 py-3 text-center font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light sm:w-auto"
+            >
+              دریافت مشاوره
+            </Link>
+            <Link
+              href="/bizcofood/demo"
+              className="w-full rounded-full border border-bizko-teal/60 px-8 py-3 text-center font-bold text-bizko-teal-light transition-colors hover:bg-bizko-teal/10 sm:w-auto"
+            >
+              دریافت دمو
+            </Link>
+          </div>
         </div>
       </section>
     </>
