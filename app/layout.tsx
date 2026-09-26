@@ -27,6 +27,41 @@ export const metadata: Metadata = {
     "گروه نرم‌افزاری بیزکو — نرم‌افزارهای مدیریت فروشگاه و رستوران (بیزکو مارکت و بیزکوفود)",
 };
 
+const organizationLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://bizko.ir/#organization",
+      name: "بیزکو",
+      alternateName: "Bizko",
+      url: "https://bizko.ir/",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://bizko.ir/bizko-logo.png",
+      },
+      email: "info@bizko.ir",
+      telephone: "+989381979753",
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+989381979753",
+        email: "info@bizko.ir",
+        contactType: "customer service",
+        areaServed: "IR",
+        availableLanguage: ["fa"],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://bizko.ir/#website",
+      url: "https://bizko.ir/",
+      name: "بیزکو | نرم‌افزارهای مدیریت کسب‌وکار",
+      inLanguage: "fa-IR",
+      publisher: { "@id": "https://bizko.ir/#organization" },
+    },
+  ],
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -35,6 +70,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${vazirmatn.variable} ${estedad.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
