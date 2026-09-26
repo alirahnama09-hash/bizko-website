@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { DEMOS, BASE_URL } from "@/lib/demos";
+import { DEMOS, BASE_URL, EMAIL_FROM } from "@/lib/demos";
 
 export const runtime = "nodejs";
 
@@ -32,7 +32,7 @@ export async function GET(request: NextRequest) {
 
   const resend = new Resend(apiKey);
   const { error } = await resend.emails.send({
-    from: "onboarding@resend.dev",
+    from: EMAIL_FROM,
     to: email,
     subject: `لینک دانلود دمو — ${demo.name}`,
     text:

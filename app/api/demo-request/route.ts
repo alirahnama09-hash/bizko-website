@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { DEMOS, OWNER_EMAIL, BASE_URL } from "@/lib/demos";
+import { DEMOS, OWNER_EMAIL, BASE_URL, EMAIL_FROM } from "@/lib/demos";
 
 export const runtime = "nodejs";
 
@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
 
   const resend = new Resend(apiKey);
   const { error } = await resend.emails.send({
-    from: "onboarding@resend.dev",
+    from: EMAIL_FROM,
     to: OWNER_EMAIL,
     replyTo: emailValue,
     subject: `درخواست دمو — ${demo.name}`,

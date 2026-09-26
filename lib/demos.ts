@@ -11,3 +11,4 @@ export const DEMOS: Record<string, { name: string; file: string }> = {
 
 export const OWNER_EMAIL = "bizkogroups@gmail.com";
 export const BASE_URL = "https://bizko.ir";
+export const EMAIL_FROM = process.env.RESEND_FROM ?? "onboarding@resend.dev";
