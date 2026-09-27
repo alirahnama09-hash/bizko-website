@@ -1,11 +1,11 @@
 export const DEMOS: Record<string, { name: string; file: string }> = {
   "bizko-market": {
     name: "بیزکو مارکت",
-    file: "/downloads/bizko-market/Bizko-Market-Demo.exe",
+    file: "/api/download/bizko-market",
   },
   bizcofood: {
     name: "بیزکوفود",
-    file: "/downloads/bizcofood/BizcoFoodDemo_0.1.1_x64-setup.exe",
+    file: "/api/download/bizcofood",
   },
 };
 
