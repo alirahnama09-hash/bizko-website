@@ -96,7 +96,7 @@ export default function BizcofoodPage() {
     <>
       <section className="overflow-hidden bg-bizko-navy/[0.03] sm:grid sm:grid-cols-2 sm:items-center">
         <div className="p-8 md:p-12 lg:px-16 lg:py-24">
-          <div className="mx-auto max-w-xl text-center sm:order-1 sm:text-right">
+          <div className="mx-auto max-w-xl text-center sm:order-1 sm:text-right" data-aos="fade-right" data-aos-duration="700">
             <h1 className="font-heading text-2xl font-black tracking-tight text-bizko-navy md:text-4xl">
               بیزکوفود
             </h1>
@@ -121,6 +121,8 @@ export default function BizcofoodPage() {
         <img
           alt=""
           src="https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?auto=format&fit=crop&q=80&w=1160"
+          data-aos="fade-left"
+          data-aos-duration="700"
           className="h-full w-full object-cover sm:order-2 sm:h-[calc(100%-2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%-4rem)] md:rounded-ss-[60px]"
         />
       </section>
@@ -141,6 +143,9 @@ export default function BizcofoodPage() {
 return isFeatured ? (
               <div
                 key={feature.title}
+                data-aos="fade-up"
+                data-aos-delay={i * 100}
+                data-aos-duration="700"
                 className="relative flex flex-col rounded-2xl border-2 border-bizko-teal/50 bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <span className="inline-flex rounded-full bg-bizko-teal/15 px-3 py-1 text-xs font-bold text-bizko-teal">
@@ -155,6 +160,9 @@ return isFeatured ? (
             ) : (
               <div
                 key={feature.title}
+                data-aos="fade-up"
+                data-aos-delay={i * 100}
+                data-aos-duration="700"
                 className={`flex flex-col rounded-2xl ${theme.card} p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
               >
                 <span

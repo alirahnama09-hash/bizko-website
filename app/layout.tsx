@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AosProvider from "@/components/AosProvider";
 import "./globals.css";
 
 const vazirmatn = localFont({
@@ -75,7 +76,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
         />
         <Header />
-        <main className="flex-1">{children}</main>
+        <AosProvider>
+          <main className="flex-1">{children}</main>
+        </AosProvider>
         <Footer />
       </body>
     </html>

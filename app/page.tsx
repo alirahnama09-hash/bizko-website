@@ -69,7 +69,11 @@ export default function Home() {
 
       <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid gap-6 sm:grid-cols-2 lg:gap-8">
-          <div className="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1">
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="700"
+            className="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1"
+          >
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-bizko-teal/30 blur-2xl"
@@ -96,7 +100,11 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1">
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="700"
+            className="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1"
+          >
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-bizko-teal/30 blur-2xl"
