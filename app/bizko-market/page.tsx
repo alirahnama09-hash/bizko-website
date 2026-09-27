@@ -1,8 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { WifiOff } from "lucide-react";
-import HeroSection from "@/components/HeroSection";
 import ScreenshotFrame from "@/components/ScreenshotFrame";
 
 export const metadata: Metadata = {
@@ -96,52 +94,37 @@ const CARD_THEMES = [
 export default function BizkoMarketPage() {
   return (
     <>
-      <HeroSection>
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-16 pb-16 text-center sm:px-6 sm:pt-20 sm:pb-20">
-          <div className="relative">
-            <div
-              aria-hidden="true"
-              className="absolute -inset-3 -z-10 rounded-[1.75rem] bg-bizko-teal/20 blur-xl"
-            />
-            <Image
-              src="/bizko-market-logo.png"
-              alt="لوگوی بیزکو مارکت"
-              width={1254}
-              height={1254}
-              priority
-              className="h-20 w-20 rounded-2xl shadow-[0_14px_40px_-8px_rgba(4,15,31,0.85)] sm:h-24 sm:w-24"
-            />
-          </div>
-          <span className="mt-4 rounded-full bg-bizko-teal/15 px-3.5 py-1 text-sm font-medium text-bizko-teal-light sm:px-4 sm:py-1.5">
-            محصولی از گروه نرم‌افزاری بیزکو
-          </span>
-          <h1 className="font-heading mt-5 text-4xl font-black tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">بیزکو مارکت</h1>
-          <p className="mt-4 max-w-2xl text-base font-light leading-8 text-white/80 sm:mt-5 sm:text-lg sm:leading-9">
-بیزکو مارکت نرم‌افزاری دسکتاپ و کاملاً آفلاین است که مدیریت
-            روزمره فروشگاه را از موجودی و فروش تا بدهی و گزارش‌گیری در یک
-            محیط یکپارچه گرد می‌آورد. داشبورد زنده با نمودار روند فروش و سهم
-            دسته‌بندی‌ها، هشدار خودکار کمبود کالا، پیگیری بدهی مشتریان، و
-            پشتیبان‌گیری خودکار از اطلاعات — بدون نیاز به اتصال اینترنت و
-            به‌صورت کامل روی سیستم فروشگاه.
-          </p>
-          <div className="mt-10 w-full max-w-3xl">
-            <ScreenshotFrame
-              src="/screenshots/bizko-market-home.png"
-              alt="اسکرین‌شات صفحه اصلی بیزکو مارکت"
-              title="بیزکو مارکت — نرم‌افزار مدیریت فروشگاه"
-            />
+      <section className="overflow-hidden bg-bizko-navy/[0.03] sm:grid sm:grid-cols-2 sm:items-center">
+        <div className="p-8 md:p-12 lg:px-16 lg:py-24">
+          <div className="mx-auto max-w-xl text-center sm:order-1 sm:text-right">
+            <h1 className="font-heading text-2xl font-black tracking-tight text-bizko-navy md:text-4xl">
+              بیزکو مارکت
+            </h1>
+            <p className="hidden font-light leading-8 text-bizko-navy/60 md:mt-4 md:block md:text-lg">
+              بیزکو مارکت نرم‌افزاری دسکتاپ و کاملاً آفلاین است که مدیریت
+              روزمره فروشگاه را از موجودی و فروش تا بدهی و گزارش‌گیری در یک
+              محیط یکپارچه گرد می‌آورد. داشبورد زنده با نمودار روند فروش و سهم
+              دسته‌بندی‌ها، هشدار خودکار کمبود کالا، پیگیری بدهی مشتریان، و
+              پشتیبان‌گیری خودکار از اطلاعات — بدون نیاز به اتصال اینترنت و
+              به‌صورت کامل روی سیستم فروشگاه.
+            </p>
+            <div className="mt-4 md:mt-8">
+              <Link
+                href="/bizko-market/demo"
+                className="inline-block rounded-md bg-bizko-teal px-10 py-3 text-sm font-bold text-white transition-colors hover:bg-bizko-teal-light focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-bizko-teal focus-visible:ring-offset-2"
+              >
+                دریافت دمو
+              </Link>
+            </div>
           </div>
         </div>
-        <svg
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 left-0 h-10 w-full text-white"
-          viewBox="0 0 1440 48"
-          preserveAspectRatio="none"
-          fill="currentColor"
-        >
-          <path d="M0,24 C180,44 360,10 540,18 C720,26 900,40 1080,28 C1260,16 1350,10 1440,20 L1440,48 L0,48 Z" />
-        </svg>
-      </HeroSection>
+        {/* TODO: جایگزینی تصویر placeholder با اسکرین‌شات واقعی بیزکو مارکت (public/screenshots/bizko-market-home.png) */}
+        <img
+          alt=""
+          src="https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?auto=format&fit=crop&q=80&w=1160"
+          className="h-full w-full object-cover sm:order-2 sm:h-[calc(100%-2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%-4rem)] md:rounded-ss-[60px]"
+        />
+      </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <div className="text-center">
