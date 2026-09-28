@@ -8,6 +8,24 @@ export const metadata: Metadata = {
   },
   description:
     "با گروه نرم‌افزاری بیزکو در تماس باشید؛ پاسخگویی به سوالات درباره بیزکو مارکت و بیزکوفود.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "تماس با ما | بیزکو",
+    description:
+      "با گروه نرم‌افزاری بیزکو در تماس باشید؛ پاسخگویی به سوالات درباره بیزکو مارکت و بیزکوفود.",
+    url: "/contact",
+    siteName: "بیزکو",
+    locale: "fa_IR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "تماس با ما | بیزکو",
+    description:
+      "با گروه نرم‌افزاری بیزکو در تماس باشید؛ پاسخگویی به سوالات درباره بیزکو مارکت و بیزکوفود.",
+  },
 };
 
 function PhoneIcon({ className }: { className?: string }) {

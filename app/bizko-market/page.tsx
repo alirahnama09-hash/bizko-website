@@ -11,6 +11,42 @@ export const metadata: Metadata = {
   },
   description:
     "نرم‌افزار آفلاین مدیریت فروشگاه بیزکو مارکت؛ مدیریت موجودی و هشدار کمبود کالا، داشبورد فروش، گزارش‌گیری و مدیریت بدهی و مشتریان.",
+  alternates: {
+    canonical: "/bizko-market",
+  },
+  openGraph: {
+    title: "بیزکو مارکت | نرم‌افزار مدیریت فروشگاه",
+    description:
+      "نرم‌افزار آفلاین مدیریت فروشگاه بیزکو مارکت؛ مدیریت موجودی و هشدار کمبود کالا، داشبورد فروش، گزارش‌گیری و مدیریت بدهی و مشتریان.",
+    url: "/bizko-market",
+    siteName: "بیزکو",
+    locale: "fa_IR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "بیزکو مارکت | نرم‌افزار مدیریت فروشگاه",
+    description:
+      "نرم‌افزار آفلاین مدیریت فروشگاه بیزکو مارکت؛ مدیریت موجودی و هشدار کمبود کالا، داشبورد فروش، گزارش‌گیری و مدیریت بدهی و مشتریان.",
+  },
+};
+
+const softwareLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "بیزکو مارکت",
+  description:
+    "نرم‌افزار آفلاین مدیریت فروشگاه بیزکو مارکت؛ مدیریت موجودی و هشدار کمبود کالا، داشبورد فروش، گزارش‌گیری و مدیریت بدهی و مشتریان.",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Windows",
+  url: "https://bizko.ir/bizko-market",
+  inLanguage: "fa",
+  publisher: {
+    "@type": "Organization",
+    "@id": "https://bizko.ir/#organization",
+    name: "بیزکو",
+    url: "https://bizko.ir/",
+  },
 };
 
 const FEATURES = [
@@ -98,6 +134,10 @@ const MARKET_DEMO_AVAILABLE = isDemoAvailable("bizko-market");
 export default function BizkoMarketPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
       <section className="relative flex flex-col overflow-hidden bg-bizko-navy sm:h-[200px] sm:flex-row sm:items-center md:h-[240px] lg:h-[320px] xl:h-[380px]">
         <div className="relative h-[220px] w-full overflow-hidden sm:absolute sm:inset-y-0 sm:left-0 sm:right-auto sm:h-full sm:w-auto sm:aspect-[1586/494]">
           <Image

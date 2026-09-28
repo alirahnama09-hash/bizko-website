@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: { absolute: "دریافت دمو | بیزکو مارکت" },
   description:
     "نسخه دموی آزمایشی بیزکو مارکت را درخواست دهید؛ پس از تأیید، لینک دانلود به ایمیل شما ارسال می‌شود.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function BizkoMarketDemoPage() {

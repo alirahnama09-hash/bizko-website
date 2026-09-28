@@ -10,6 +10,42 @@ export const metadata: Metadata = {
   },
   description:
     "نرم‌افزار مدیریت کافه و رستوران بیزکوفود؛ مدیریت منو، سفارش‌گیری و میزها، موجودی مواد اولیه و گزارش‌گیری فروش.",
+  alternates: {
+    canonical: "/bizcofood",
+  },
+  openGraph: {
+    title: "بیزکوفود | نرم‌افزار مدیریت کافه و رستوران",
+    description:
+      "نرم‌افزار مدیریت کافه و رستوران بیزکوفود؛ مدیریت منو، سفارش‌گیری و میزها، موجودی مواد اولیه و گزارش‌گیری فروش.",
+    url: "/bizcofood",
+    siteName: "بیزکو",
+    locale: "fa_IR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "بیزکوفود | نرم‌افزار مدیریت کافه و رستوران",
+    description:
+      "نرم‌افزار مدیریت کافه و رستوران بیزکوفود؛ مدیریت منو، سفارش‌گیری و میزها، موجودی مواد اولیه و گزارش‌گیری فروش.",
+  },
+};
+
+const softwareLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "بیزکوفود",
+  description:
+    "نرم‌افزار مدیریت کافه و رستوران بیزکوفود؛ مدیریت منو، سفارش‌گیری و میزها، موجودی مواد اولیه و گزارش‌گیری فروش.",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Windows",
+  url: "https://bizko.ir/bizcofood",
+  inLanguage: "fa",
+  publisher: {
+    "@type": "Organization",
+    "@id": "https://bizko.ir/#organization",
+    name: "بیزکو",
+    url: "https://bizko.ir/",
+  },
 };
 
 const FEATURES = [
@@ -95,6 +131,10 @@ const CARD_THEMES = [
 export default function BizcofoodPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
       <section className="relative flex flex-col overflow-hidden bg-bizko-navy sm:h-[200px] sm:flex-row sm:items-center md:h-[240px] lg:h-[320px] xl:h-[380px]">
         <div className="relative h-[220px] w-full overflow-hidden sm:absolute sm:inset-y-0 sm:left-0 sm:right-auto sm:h-full sm:w-auto sm:aspect-[1586/496]">
           <Image
