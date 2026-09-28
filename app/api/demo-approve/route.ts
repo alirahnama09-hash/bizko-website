@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { DEMOS, BASE_URL } from "@/lib/demos";
+import { DEMOS, BASE_URL, isDemoAvailable } from "@/lib/demos";
 import { EMAIL_FROM } from "@/lib/resend-config";
 import {
   verifyDemoApproveToken,
@@ -65,6 +65,13 @@ const EXPIRED_HTML = `<p>این لینک اعتبار خود را از دست د
 const USED_HTML = `<p>این لینک قبلاً استفاده شده است و دیگر معتبر نیست.</p>`;
 const CONFIG_HTML = `<p>سرویس تأیید به‌درستی تنظیم نشده است. لطفاً بعداً دوباره تلاش کنید.</p>`;
 
+function demoUnavailableHtml(demoName: string): string {
+  return `<p>دموی <span class="row">${escapeHtml(
+    demoName
+  )}</span> فعلاً در دسترس نیست.</p>
+  <p class="muted">ایمیلی ارسال نشد. برای اطلاع از زمان انتشار نسخه آزمایشی با ما تماس بگیرید.</p>`;
+}
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const token = searchParams.get("token") ?? "";
@@ -91,6 +98,10 @@ export async function GET(request: NextRequest) {
   const demo = DEMOS[verified.data.product];
   if (!demo) {
     return sendHtml(400, "درخواست نامعتبر است", INVALID_HTML);
+  }
+
+  if (!isDemoAvailable(verified.data.product)) {
+    return sendHtml(200, "دمو در دسترس نیست", demoUnavailableHtml(demo.name));
   }
 
   const { name, email } = verified.data;
@@ -147,6 +158,10 @@ export async function POST(request: NextRequest) {
   const demo = DEMOS[verified.data.product];
   if (!demo) {
     return sendHtml(400, "درخواست نامعتبر است", INVALID_HTML);
+  }
+
+  if (!isDemoAvailable(verified.data.product)) {
+    return sendHtml(200, "دمو در دسترس نیست", demoUnavailableHtml(demo.name));
   }
 
   const { name, email } = verified.data;
