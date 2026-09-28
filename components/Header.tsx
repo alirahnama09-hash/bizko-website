@@ -27,6 +27,7 @@ export default function Header() {
             width={40}
             height={40}
             priority
+            sizes="40px"
             className="h-9 w-9 shrink-0 sm:h-10 sm:w-10"
           />
           <span className="whitespace-nowrap text-base font-extrabold text-bizko-navy sm:text-xl">
@@ -63,7 +64,7 @@ export default function Header() {
           <div className="flex shrink-0 items-center gap-3 sm:gap-4">
             <Link
               href="/contact"
-              className="rounded-md bg-bizko-teal px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-bizko-teal-light sm:px-5"
+              className="rounded-md bg-bizko-teal px-4 py-2.5 text-sm font-medium text-bizko-navy transition-colors hover:bg-bizko-teal-light sm:px-5"
             >
               دریافت مشاوره
             </Link>

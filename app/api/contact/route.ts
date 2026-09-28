@@ -100,7 +100,10 @@ export async function POST(request: Request) {
   });
 
   if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json(
+      { error: "ارسال پیام ممکن نشد، دوباره تلاش کنید" },
+      { status: 500 }
+    );
   }
 
   recordHit(clientKey);

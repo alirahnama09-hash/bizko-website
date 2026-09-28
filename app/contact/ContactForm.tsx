@@ -11,6 +11,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -30,8 +31,12 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
       });
+      const data = (await res.json().catch(() => null)) as
+        | { error?: string }
+        | null;
       if (!res.ok) {
         setStatus("error");
+        setErrorMessage(data?.error ?? "خطا، دوباره امتحان کنید");
         return;
       }
       setStatus("success");
@@ -40,6 +45,7 @@ export default function ContactForm() {
       setMessage("");
     } catch {
       setStatus("error");
+      setErrorMessage("خطا، دوباره امتحان کنید");
     }
   }
 
@@ -111,7 +117,7 @@ export default function ContactForm() {
       )}
       {status === "error" && (
         <p className="rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
-          خطا، دوباره امتحان کنید
+          {errorMessage || "خطا، دوباره امتحان کنید"}
         </p>
       )}
 

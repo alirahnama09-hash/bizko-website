@@ -39,6 +39,7 @@ export default function ScreenshotFrame({
         alt={alt}
         width={1920}
         height={1040}
+        sizes="(min-width: 768px) 50vw, 100vw"
         className="h-auto w-full"
       />
     </div>

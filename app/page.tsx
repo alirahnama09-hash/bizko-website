@@ -50,6 +50,7 @@ export default function Home() {
                 width={1024}
                 height={1024}
                 priority
+                sizes="(min-width: 768px) 34vw, 100vw"
                 className="h-auto w-full max-w-[26rem] rounded-[2rem] object-contain drop-shadow-[0_20px_60px_rgba(16,166,166,0.45)]"
               />
             </div>
@@ -72,11 +73,15 @@ export default function Home() {
           <div
             data-aos="zoom-in"
             data-aos-duration="700"
-            className="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1"
+            className="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-bl from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1"
           >
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-bizko-teal/30 blur-2xl"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-bizko-navy/70"
             />
             <div className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-white/15">
               <Image
@@ -84,17 +89,18 @@ export default function Home() {
                 alt="لوگوی بیزکو مارکت"
                 width={1254}
                 height={1254}
+                sizes="56px"
                 className="h-full w-full object-contain"
               />
             </div>
-            <h2 className="font-heading mt-5 text-2xl font-black text-white">بیزکو مارکت</h2>
-            <p className="mt-3 font-light leading-8 text-white/70">
+            <h2 className="font-heading relative mt-5 text-2xl font-black text-white">بیزکو مارکت</h2>
+            <p className="relative mt-3 font-light leading-8 text-white/70">
               نرم‌افزار آفلاین مدیریت فروشگاه — موجودی، فروش، بدهی و
               گزارش‌گیری در یک بستر یکپارچه.
             </p>
             <Link
               href="/bizko-market"
-              className="mt-6 inline-flex items-center self-start rounded-full bg-bizko-teal px-7 py-2.5 text-sm font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light"
+              className="relative mt-6 inline-flex items-center self-start rounded-full bg-bizko-teal px-7 py-2.5 text-sm font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light"
             >
               بیشتر بدانید
             </Link>
@@ -103,11 +109,15 @@ export default function Home() {
           <div
             data-aos="zoom-in"
             data-aos-duration="700"
-            className="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1"
+            className="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-bl from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1"
           >
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-bizko-teal/30 blur-2xl"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-bizko-navy/70"
             />
             <div className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-white/15">
               <Image
@@ -115,17 +125,18 @@ export default function Home() {
                 alt="لوگوی بیزکوفود"
                 width={1254}
                 height={1254}
+                sizes="56px"
                 className="h-full w-full object-contain"
               />
             </div>
-            <h2 className="font-heading mt-5 text-2xl font-black text-white">بیزکوفود</h2>
-            <p className="mt-3 font-light leading-8 text-white/70">
+            <h2 className="font-heading relative mt-5 text-2xl font-black text-white">بیزکوفود</h2>
+            <p className="relative mt-3 font-light leading-8 text-white/70">
               نرم‌افزار جامع مدیریت کافه و رستوران — از سفارش‌گیری و میزها
               تا انبار و باشگاه مشتریان.
             </p>
             <Link
               href="/bizcofood"
-              className="mt-6 inline-flex items-center self-start rounded-full bg-bizko-teal px-7 py-2.5 text-sm font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light"
+              className="relative mt-6 inline-flex items-center self-start rounded-full bg-bizko-teal px-7 py-2.5 text-sm font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light"
             >
               بیشتر بدانید
             </Link>

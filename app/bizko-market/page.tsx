@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { WifiOff } from "lucide-react";
 import ScreenshotFrame from "@/components/ScreenshotFrame";
@@ -103,7 +104,7 @@ export default function BizkoMarketPage() {
             <h1 className="font-heading text-2xl font-black tracking-tight text-bizko-navy md:text-4xl">
               بیزکو مارکت
             </h1>
-            <p className="hidden font-light leading-8 text-bizko-navy/60 md:mt-4 md:block md:text-lg">
+            <p className="mt-4 text-base font-light leading-8 text-bizko-navy/60 md:text-lg">
               بیزکو مارکت نرم‌افزاری دسکتاپ و کاملاً آفلاین است که مدیریت
               روزمره فروشگاه را از موجودی و فروش تا بدهی و گزارش‌گیری در یک
               محیط یکپارچه گرد می‌آورد. داشبورد زنده با نمودار روند فروش و سهم
@@ -115,7 +116,7 @@ export default function BizkoMarketPage() {
               {MARKET_DEMO_AVAILABLE ? (
                 <Link
                   href="/bizko-market/demo"
-                  className="inline-block rounded-md bg-bizko-teal px-10 py-3 text-sm font-bold text-white transition-colors hover:bg-bizko-teal-light focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-bizko-teal focus-visible:ring-offset-2"
+                  className="inline-block rounded-md bg-bizko-teal px-10 py-3 text-sm font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-bizko-teal focus-visible:ring-offset-2"
                 >
                   دریافت دمو
                 </Link>
@@ -133,10 +134,13 @@ export default function BizkoMarketPage() {
             </div>
           </div>
         </div>
-        {/* TODO: جایگزینی تصویر placeholder با اسکرین‌شات واقعی بیزکو مارکت (public/screenshots/bizko-market-home.png) */}
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?auto=format&fit=crop&q=80&w=1160"
+        <Image
+          src="/screenshots/bizko-market-home.png"
+          alt="نمایی از صفحه اصلی نرم‌افزار بیزکو مارکت"
+          width={1920}
+          height={1036}
+          priority
+          sizes="(min-width: 640px) 50vw, 100vw"
           data-aos="fade-left"
           data-aos-duration="700"
           className="h-full w-full object-cover sm:order-2 sm:h-[calc(100%-2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%-4rem)] md:rounded-ss-[60px]"
