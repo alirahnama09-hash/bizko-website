@@ -156,7 +156,7 @@ export default function BizkoMarketPage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
-        <div className="text-center">
+        <div className="text-center" data-aos="fade-up" data-aos-duration="700">
           <h2 className="font-heading text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
             چرا بیزکو مارکت؟
           </h2>
@@ -209,7 +209,7 @@ return isFeatured ? (
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
-        <div className="text-center">
+        <div className="text-center" data-aos="fade-up" data-aos-duration="700">
           <h2 className="font-heading text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
             تصاویری از محیط نرم‌افزار
           </h2>
@@ -218,24 +218,28 @@ return isFeatured ? (
           </p>
         </div>
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="700" className="h-full">
           <ScreenshotFrame
             variant="light"
             src="/screenshots/bizko-market-dashboard.png"
             alt="اسکرین‌شات داشبورد بیزکو مارکت"
             title="داشبورد فروشگاه"
           />
+          </div>
+          <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" className="h-full">
           <ScreenshotFrame
             variant="light"
             src="/screenshots/bizko-market-home.png"
             alt="اسکرین‌شات صفحه اصلی بیزکو مارکت"
             title="صفحه اصلی سیستم"
           />
+          </div>
         </div>
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 pb-14 sm:px-6 sm:pb-20">
         <hr className="mx-auto mb-10 max-w-md border-0 border-t-2 border-bizko-teal/10 sm:mb-12" />
-        <div className="rounded-3xl bg-bizko-navy px-6 py-12 text-center text-white sm:py-16">
+        <div className="rounded-3xl bg-bizko-navy px-6 py-12 text-center text-white sm:py-16" data-aos="fade-up" data-aos-duration="700">
           <h2 className="font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">
             آماده‌اید فروشگاه خود را حرفه‌ای مدیریت کنید؟
           </h2>

@@ -103,7 +103,7 @@ export default function ContactPage() {
             <ContactForm />
           </div>
 
-          <div className="rounded-2xl bg-bizko-navy p-6 text-white sm:p-8 lg:col-span-2">
+          <div className="rounded-2xl bg-bizko-navy p-6 text-white sm:p-8 lg:col-span-2" data-aos="fade-up" data-aos-duration="700">
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">اطلاعات تماس</h2>
             <ul className="mt-6 flex flex-row flex-wrap items-center gap-6">
               <li>

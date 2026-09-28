@@ -99,15 +99,18 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 sm:pb-20">
-        <div className="text-center">
+        <div className="text-center" data-aos="fade-up" data-aos-duration="700">
           <h2 className="font-heading text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
             ارزش‌ها و اصول ما
           </h2>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {VALUES.map((value) => (
+          {VALUES.map((value, i) => (
             <div
               key={value.title}
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
+              data-aos-duration="700"
               className="rounded-2xl border border-bizko-teal/25 bg-white p-6 transition-colors hover:border-bizko-teal"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-bizko-teal/10 text-bizko-teal">
@@ -126,7 +129,7 @@ export default function AboutPage() {
 
       <section className="mx-auto w-full max-w-6xl px-4 pb-14 sm:px-6 sm:pb-20">
         <hr className="mx-auto mb-10 max-w-md border-0 border-t-2 border-bizko-teal/10 sm:mb-12" />
-        <div className="rounded-3xl bg-bizko-navy px-6 py-12 text-center text-white sm:py-16">
+        <div className="rounded-3xl bg-bizko-navy px-6 py-12 text-center text-white sm:py-16" data-aos="fade-up" data-aos-duration="700">
           <h2 className="font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">
             با محصولات بیزکو آشنا شوید
           </h2>
