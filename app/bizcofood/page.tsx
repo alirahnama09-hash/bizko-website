@@ -95,13 +95,28 @@ const CARD_THEMES = [
 export default function BizcofoodPage() {
   return (
     <>
-      <section className="overflow-hidden bg-bizko-navy/[0.03] sm:grid sm:grid-cols-2 sm:items-center">
-        <div className="p-8 md:p-12 lg:px-16 lg:py-24">
-          <div className="mx-auto max-w-xl text-center sm:order-1 sm:text-right" data-aos="fade-right" data-aos-duration="700">
-            <h1 className="font-heading text-2xl font-black tracking-tight text-bizko-navy md:text-4xl">
+      <section className="relative flex flex-col overflow-hidden bg-bizko-navy sm:h-[300px] sm:flex-row sm:items-center md:h-[360px] lg:h-[440px]">
+        <div className="relative h-[220px] w-full overflow-hidden sm:absolute sm:inset-0 sm:h-full">
+          <Image
+            src="/bizcofood-hero.webp"
+            alt=""
+            width={1586}
+            height={496}
+            priority
+            sizes="100vw"
+            className="h-full w-full scale-x-[-1] object-cover object-right"
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-l from-bizko-navy via-bizko-navy/70 to-transparent"
+        />
+        <div className="relative z-10 w-full px-6 py-8 sm:py-0 sm:px-16">
+          <div className="mx-auto max-w-xl text-center sm:mx-0 sm:text-right" data-aos="fade-right" data-aos-duration="700">
+            <h1 className="font-heading text-2xl font-black tracking-tight text-white md:text-4xl">
               بیزکوفود
             </h1>
-            <p className="mt-4 text-base font-light leading-8 text-bizko-navy/60 md:text-lg">
+            <p className="mt-4 text-base font-light leading-8 text-white/85 md:text-lg">
               بیزکوفود نرم‌افزاری جامع و تخصصی برای اداره کافه و رستوران است
               — از سفارش‌گیری و مدیریت میزها تا صندوق، انبار مواد اولیه،
               باشگاه مشتریان وفادار و محاسبه دقیق سود و زیان. مدیریت پرسنل و
@@ -118,17 +133,6 @@ export default function BizcofoodPage() {
             </div>
           </div>
         </div>
-        <Image
-          src="/bizcofood-hero.webp"
-          alt="نرم‌افزار مدیریت کافه و رستوران بیزکوفود روی تبلت همراه با وسایل کافه و رستوران"
-          width={1586}
-          height={496}
-          priority
-          sizes="(min-width: 640px) 50vw, 100vw"
-          data-aos="fade-left"
-          data-aos-duration="700"
-          className="h-full w-full object-cover object-right sm:order-2 sm:h-[calc(100%-2rem)] sm:max-h-[24vw] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%-4rem)] md:rounded-ss-[60px]"
-        />
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
