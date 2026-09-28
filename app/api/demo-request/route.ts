@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { DEMOS, OWNER_EMAIL, BASE_URL, EMAIL_FROM } from "@/lib/demos";
+import { createDemoApproveToken } from "@/lib/demo-approve-token";
 
 export const runtime = "nodejs";
 
@@ -85,10 +86,22 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const approveUrl = `${BASE_URL}/api/demo-approve?product=${encodeURIComponent(
-    productValue
-  )}&name=${encodeURIComponent(nameValue)}&email=${encodeURIComponent(
-    emailValue
+  let token: string;
+  try {
+    token = createDemoApproveToken({
+      product: productValue,
+      name: nameValue,
+      email: emailValue,
+    });
+  } catch {
+    return NextResponse.json(
+      { error: "سرویس تأیید دمو به‌درستی تنظیم نشده است" },
+      { status: 500 }
+    );
+  }
+
+  const approveUrl = `${BASE_URL}/api/demo-approve?token=${encodeURIComponent(
+    token
   )}`;
 
   const resend = new Resend(apiKey);
