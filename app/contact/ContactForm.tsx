@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useId } from "react";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -12,6 +12,22 @@ export default function ContactForm() {
     "idle"
   );
   const [errorMessage, setErrorMessage] = useState("");
+
+  function resetStatusAfterEdit() {
+    setStatus((s) => (s === "error" || s === "success" ? "idle" : s));
+    setErrorMessage("");
+  }
+
+  const nameId = useId();
+  const emailId = useId();
+  const messageId = useId();
+  const errorId = useId();
+  const counterId = useId();
+
+  const nameInvalid = status === "error" && !name.trim();
+  const emailInvalid =
+    status === "error" && (!email.trim() || !EMAIL_REGEX.test(email.trim()));
+  const messageInvalid = status === "error" && !message.trim();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -53,70 +69,94 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-5">
       <div>
         <label
-          htmlFor="name"
+          htmlFor={nameId}
           className="mb-2 block text-sm font-semibold text-bizko-navy"
         >
           نام
         </label>
         <input
-          id="name"
+          id={nameId}
           name="name"
           type="text"
           placeholder="نام شما"
           required
           value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="w-full rounded-xl border border-bizko-navy/15 bg-white px-4 py-2.5 text-sm text-bizko-navy outline-none transition-colors placeholder:text-bizko-navy/60 focus:border-bizko-teal"
+          onChange={(e) => {
+            setName(e.target.value);
+            resetStatusAfterEdit();
+          }}
+          aria-invalid={nameInvalid}
+          aria-describedby={nameInvalid ? errorId : undefined}
+          className="w-full rounded-xl border border-bizko-navy/15 bg-white px-4 py-2.5 text-sm text-bizko-navy transition-colors placeholder:text-bizko-navy/70 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-bizko-navy-light focus-visible:ring-offset-2"
         />
       </div>
       <div>
         <label
-          htmlFor="email"
+          htmlFor={emailId}
           className="mb-2 block text-sm font-semibold text-bizko-navy"
         >
           ایمیل
         </label>
         <input
-          id="email"
+          id={emailId}
           name="email"
           type="email"
           placeholder="you@example.com"
           required
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-xl border border-bizko-navy/15 bg-white px-4 py-2.5 text-sm text-bizko-navy outline-none transition-colors placeholder:text-bizko-navy/60 focus:border-bizko-teal"
+          onChange={(e) => {
+            setEmail(e.target.value);
+            resetStatusAfterEdit();
+          }}
+          aria-invalid={emailInvalid}
+          aria-describedby={emailInvalid ? errorId : undefined}
+          className="w-full rounded-xl border border-bizko-navy/15 bg-white px-4 py-2.5 text-sm text-bizko-navy transition-colors placeholder:text-bizko-navy/70 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-bizko-navy-light focus-visible:ring-offset-2"
         />
       </div>
       <div>
         <label
-          htmlFor="message"
+          htmlFor={messageId}
           className="mb-2 block text-sm font-semibold text-bizko-navy"
         >
           پیام
         </label>
         <textarea
-          id="message"
+          id={messageId}
           name="message"
           rows={5}
           maxLength={2000}
           placeholder="پیام شما"
           required
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          className="w-full resize-none rounded-xl border border-bizko-navy/15 bg-white px-4 py-2.5 text-sm text-bizko-navy outline-none transition-colors placeholder:text-bizko-navy/60 focus:border-bizko-teal"
+          onChange={(e) => {
+            setMessage(e.target.value);
+            resetStatusAfterEdit();
+          }}
+          aria-invalid={messageInvalid}
+          aria-describedby={[messageInvalid ? errorId : null, counterId]
+            .filter(Boolean)
+            .join(" ")}
+          className="w-full resize-none rounded-xl border border-bizko-navy/15 bg-white px-4 py-2.5 text-sm text-bizko-navy transition-colors placeholder:text-bizko-navy/70 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-bizko-navy-light focus-visible:ring-offset-2"
         />
-        <p className="mt-1 text-left text-xs text-bizko-navy/60">
+        <p id={counterId} className="mt-1 text-left text-xs text-bizko-navy/70">
           {message.length.toLocaleString("fa-IR")}/۲۰۰۰
         </p>
       </div>
 
       {status === "success" && (
-        <p className="rounded-xl bg-bizko-teal/10 px-4 py-3 text-sm font-semibold text-bizko-teal">
+        <p
+          role="status"
+          className="rounded-xl bg-bizko-teal/10 px-4 py-3 text-sm font-semibold text-bizko-navy"
+        >
           پیام شما ارسال شد
         </p>
       )}
       {status === "error" && (
-        <p className="rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+        <p
+          id={errorId}
+          role="alert"
+          className="rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700"
+        >
           {errorMessage || "خطا، دوباره امتحان کنید"}
         </p>
       )}

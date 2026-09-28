@@ -1,10 +1,14 @@
 import Link from "next/link";
 
+const currentPersianYear = new Intl.DateTimeFormat("fa-IR-u-ca-persian", {
+  year: "numeric",
+}).format(new Date());
+
 export default function Footer() {
   return (
     <footer className="bg-bizko-navy text-white">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-3 px-4 py-8 text-center sm:flex-row sm:justify-between sm:px-6">
-        <p className="text-sm">© ۱۴۰۴ بیزکو</p>
+        <p className="text-sm">© {currentPersianYear} بیزکو</p>
         <div className="flex items-center gap-6 text-sm">
           <Link
             href="/contact"

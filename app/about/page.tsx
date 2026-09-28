@@ -83,7 +83,7 @@ export default function AboutPage() {
       </HeroSection>
 
       <section className="mx-auto w-full max-w-3xl px-4 py-12 text-justify sm:px-6 sm:py-16">
-        <div className="space-y-5 text-base font-light leading-9 text-bizko-navy/60 sm:text-lg sm:leading-10">
+        <div className="space-y-5 text-base font-light leading-9 text-bizko-navy/70 sm:text-lg sm:leading-10">
           <p>
             بیزکو با هدف ساخت نرم‌افزارهایی شکل گرفت که صاحبان
             کسب‌وکار بتوانند واقعاً در فعالیت روزمره خود از آن‌ها استفاده

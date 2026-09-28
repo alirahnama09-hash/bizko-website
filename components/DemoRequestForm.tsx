@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useId } from "react";
 import Link from "next/link";
 import { isDemoAvailable } from "@/lib/demos";
 
@@ -14,6 +14,19 @@ export default function DemoRequestForm({ product }: { product: string }) {
     "idle"
   );
   const [errorMessage, setErrorMessage] = useState("");
+
+  function resetStatusAfterEdit() {
+    setStatus((s) => (s === "error" || s === "success" ? "idle" : s));
+    setErrorMessage("");
+  }
+
+  const nameId = useId();
+  const emailId = useId();
+  const errorId = useId();
+
+  const nameInvalid = status === "error" && !name.trim();
+  const emailInvalid =
+    status === "error" && (!email.trim() || !EMAIL_REGEX.test(email.trim()));
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -68,49 +81,67 @@ export default function DemoRequestForm({ product }: { product: string }) {
     <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-5">
       <div>
         <label
-          htmlFor="demo-name"
+          htmlFor={nameId}
           className="mb-2 block text-sm font-semibold text-bizko-navy"
         >
           نام
         </label>
         <input
-          id="demo-name"
+          id={nameId}
           name="name"
           type="text"
+          maxLength={80}
           placeholder="نام شما"
           required
           value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="w-full rounded-xl border border-bizko-navy/15 bg-white px-4 py-2.5 text-sm text-bizko-navy outline-none transition-colors placeholder:text-bizko-navy/60 focus:border-bizko-teal"
+          onChange={(e) => {
+            setName(e.target.value);
+            resetStatusAfterEdit();
+          }}
+          aria-invalid={nameInvalid}
+          aria-describedby={nameInvalid ? errorId : undefined}
+          className="w-full rounded-xl border border-bizko-navy/15 bg-white px-4 py-2.5 text-sm text-bizko-navy transition-colors placeholder:text-bizko-navy/70 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-bizko-navy-light focus-visible:ring-offset-2"
         />
       </div>
       <div>
         <label
-          htmlFor="demo-email"
+          htmlFor={emailId}
           className="mb-2 block text-sm font-semibold text-bizko-navy"
         >
           ایمیل
         </label>
         <input
-          id="demo-email"
+          id={emailId}
           name="email"
           type="email"
           placeholder="you@example.com"
           required
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-xl border border-bizko-navy/15 bg-white px-4 py-2.5 text-sm text-bizko-navy outline-none transition-colors placeholder:text-bizko-navy/60 focus:border-bizko-teal"
+          onChange={(e) => {
+            setEmail(e.target.value);
+            resetStatusAfterEdit();
+          }}
+          aria-invalid={emailInvalid}
+          aria-describedby={emailInvalid ? errorId : undefined}
+          className="w-full rounded-xl border border-bizko-navy/15 bg-white px-4 py-2.5 text-sm text-bizko-navy transition-colors placeholder:text-bizko-navy/70 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-bizko-navy-light focus-visible:ring-offset-2"
         />
       </div>
 
       {status === "success" && (
-        <p className="rounded-xl bg-bizko-teal/10 px-4 py-3 text-sm font-semibold text-bizko-teal">
+        <p
+          role="status"
+          className="rounded-xl bg-bizko-teal/10 px-4 py-3 text-sm font-semibold text-bizko-navy"
+        >
           درخواست شما ثبت شد؛ پس از تأیید، لینک دانلود به ایمیل شما ارسال
           می‌شود.
         </p>
       )}
       {status === "error" && (
-        <p className="rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+        <p
+          id={errorId}
+          role="alert"
+          className="rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-700"
+        >
           {errorMessage || "خطا، دوباره امتحان کنید"}
         </p>
       )}

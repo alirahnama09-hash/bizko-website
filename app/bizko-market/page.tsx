@@ -160,7 +160,7 @@ export default function BizkoMarketPage() {
           <h2 className="font-heading text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
             چرا بیزکو مارکت؟
           </h2>
-          <p className="mt-3 font-light text-bizko-navy/60">
+          <p className="mt-3 font-light text-bizko-navy/70">
             همه چیزهایی که یک فروشگاه برای مدیریت حرفه‌ای به آن نیاز دارد.
           </p>
         </div>
@@ -183,7 +183,7 @@ return isFeatured ? (
                   <WifiOff className="h-9 w-9" strokeWidth={1.8} aria-hidden="true" />
                 </span>
                 <h3 className="font-heading mt-5 text-xl font-black text-bizko-navy">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-bizko-navy/60">{feature.description}</p>
+                <p className="mt-2 text-sm leading-7 text-bizko-navy/70">{feature.description}</p>
               </div>
             ) : (
               <div
@@ -199,7 +199,7 @@ return isFeatured ? (
                   {feature.icon}
                 </span>
                 <h3 className="mt-5 text-lg font-extrabold text-bizko-navy">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-bizko-navy/60">
+                <p className="mt-2 text-sm leading-7 text-bizko-navy/70">
                   {feature.description}
                 </p>
               </div>
@@ -213,7 +213,7 @@ return isFeatured ? (
           <h2 className="font-heading text-3xl font-extrabold tracking-tight text-bizko-navy sm:text-4xl">
             تصاویری از محیط نرم‌افزار
           </h2>
-          <p className="mt-3 font-light text-bizko-navy/60">
+          <p className="mt-3 font-light text-bizko-navy/70">
             نمایی واقعی از بیزکو مارکت در کار روزمره فروشگاه
           </p>
         </div>

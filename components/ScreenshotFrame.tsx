@@ -22,7 +22,7 @@ export default function ScreenshotFrame({
   const bar =
     variant === "hero" ? "border-white/10 bg-white/5" : "border-bizko-navy/5 bg-bizko-navy/[0.03]";
   const label =
-    variant === "hero" ? "text-white/60" : "text-bizko-navy/60";
+    variant === "hero" ? "text-white/60" : "text-bizko-navy/70";
 
   return (
     <div

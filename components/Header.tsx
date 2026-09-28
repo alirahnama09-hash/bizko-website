@@ -15,7 +15,8 @@ const NAV_LINKS = [
 
 export default function Header() {
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [openedPath, setOpenedPath] = useState<string | null>(null);
+  const menuOpen = openedPath === pathname;
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -36,7 +37,7 @@ export default function Header() {
         </Link>
 
         <div className="flex min-w-0 flex-1 items-center justify-between gap-6">
-          <nav aria-label="Global" className="hidden md:block">
+          <nav aria-label="منوی اصلی" className="hidden md:block">
             <ul className="flex items-center gap-6 text-sm">
               {NAV_LINKS.map((link) => {
                 const isActive =
@@ -49,7 +50,7 @@ export default function Header() {
                       aria-current={isActive ? "page" : undefined}
                       className={`whitespace-nowrap font-semibold transition-colors ${
                         isActive
-                          ? "text-bizko-teal"
+                          ? "text-bizko-navy underline decoration-bizko-teal decoration-2 underline-offset-8"
                           : "text-bizko-navy/80 hover:text-bizko-teal"
                       }`}
                     >
@@ -70,10 +71,15 @@ export default function Header() {
             </Link>
             <button
               type="button"
-              onClick={() => setMenuOpen((open) => !open)}
+              onClick={() =>
+                setOpenedPath((current) =>
+                  current === null ? pathname : null
+                )
+              }
               aria-expanded={menuOpen}
-              aria-label="باز کردن منو"
-              className="rounded-md bg-bizko-teal/10 p-2.5 text-bizko-teal transition-colors hover:bg-bizko-teal/20 md:hidden"
+              aria-controls="mobile-menu"
+              aria-label={menuOpen ? "بستن منو" : "باز کردن منو"}
+              className="rounded-md bg-bizko-teal/10 p-2.5 text-bizko-navy transition-colors hover:bg-bizko-teal/20 md:hidden"
             >
               {menuOpen ? (
                 <svg
@@ -107,7 +113,8 @@ export default function Header() {
 
       {menuOpen && (
         <nav
-          aria-label="Mobile"
+          id="mobile-menu"
+          aria-label="منوی موبایل"
           className="border-t border-bizko-navy/10 bg-white shadow-lg md:hidden"
         >
           <ul className="flex flex-col gap-1 px-4 py-3">
@@ -119,11 +126,11 @@ export default function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={() => setOpenedPath(null)}
                     aria-current={isActive ? "page" : undefined}
                     className={`block rounded-md px-3 py-2.5 text-sm font-semibold transition-colors ${
                       isActive
-                        ? "bg-bizko-teal/10 text-bizko-teal"
+                        ? "bg-bizko-teal/10 text-bizko-navy"
                         : "text-bizko-navy/80 hover:bg-bizko-navy/5 hover:text-bizko-teal"
                     }`}
                   >
