@@ -135,15 +135,15 @@ export default function BizkoMarketPage() {
           </div>
         </div>
         <Image
-          src="/screenshots/bizko-market-home.png"
-          alt="نمایی از صفحه اصلی نرم‌افزار بیزکو مارکت"
-          width={1920}
-          height={1036}
+          src="/bizko-market-hero.webp"
+          alt="نرم‌افزار مدیریت فروشگاه بیزکو مارکت روی لپ‌تاپ همراه با وسایل فروشگاه"
+          width={1586}
+          height={494}
           priority
           sizes="(min-width: 640px) 50vw, 100vw"
           data-aos="fade-left"
           data-aos-duration="700"
-          className="h-full w-full object-cover sm:order-2 sm:h-[calc(100%-2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%-4rem)] md:rounded-ss-[60px]"
+          className="h-full w-full object-cover object-right sm:order-2 sm:h-[calc(100%-2rem)] sm:max-h-[24vw] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%-4rem)] md:rounded-ss-[60px]"
         />
       </section>
 

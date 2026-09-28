@@ -119,15 +119,15 @@ export default function BizcofoodPage() {
           </div>
         </div>
         <Image
-          src="/screenshots/bizcofood-dashboard.png"
-          alt="نمایی از داشبورد نرم‌افزار بیزکوفود"
-          width={1920}
-          height={1036}
+          src="/bizcofood-hero.webp"
+          alt="نرم‌افزار مدیریت کافه و رستوران بیزکوفود روی تبلت همراه با وسایل کافه و رستوران"
+          width={1586}
+          height={496}
           priority
           sizes="(min-width: 640px) 50vw, 100vw"
           data-aos="fade-left"
           data-aos-duration="700"
-          className="h-full w-full object-cover sm:order-2 sm:h-[calc(100%-2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%-4rem)] md:rounded-ss-[60px]"
+          className="h-full w-full object-cover object-right sm:order-2 sm:h-[calc(100%-2rem)] sm:max-h-[24vw] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%-4rem)] md:rounded-ss-[60px]"
         />
       </section>
 
