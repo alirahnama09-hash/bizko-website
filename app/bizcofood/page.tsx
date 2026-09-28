@@ -95,8 +95,8 @@ const CARD_THEMES = [
 export default function BizcofoodPage() {
   return (
     <>
-      <section className="relative flex flex-col overflow-hidden bg-bizko-navy sm:h-[300px] sm:flex-row sm:items-center md:h-[360px] lg:h-[440px]">
-        <div className="relative h-[220px] w-full overflow-hidden sm:absolute sm:inset-0 sm:h-full">
+      <section className="relative flex flex-col overflow-hidden bg-bizko-navy sm:h-[200px] sm:flex-row sm:items-center md:h-[240px] lg:h-[320px] xl:h-[380px]">
+        <div className="relative h-[220px] w-full overflow-hidden sm:absolute sm:inset-y-0 sm:left-0 sm:right-auto sm:h-full sm:w-auto sm:aspect-[1586/496]">
           <Image
             src="/bizcofood-hero.webp"
             alt=""
@@ -105,6 +105,10 @@ export default function BizcofoodPage() {
             priority
             sizes="100vw"
             className="h-full w-full scale-x-[-1] object-cover object-right"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 hidden w-14 bg-gradient-to-r from-bizko-navy to-transparent sm:block sm:w-16"
           />
         </div>
         <div
