@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { DEMOS, OWNER_EMAIL, BASE_URL, EMAIL_FROM } from "@/lib/demos";
+import { DEMOS, OWNER_EMAIL, BASE_URL, isDemoAvailable } from "@/lib/demos";
+import { EMAIL_FROM } from "@/lib/resend-config";
 import { createDemoApproveToken } from "@/lib/demo-approve-token";
 
 export const runtime = "nodejs";
@@ -52,9 +53,18 @@ export async function POST(request: NextRequest) {
   const nameValue = typeof name === "string" ? name.trim() : "";
   const emailValue = typeof email === "string" ? email.trim() : "";
 
-  const demo = DEMOS[productValue];
-  if (!demo) {
+  if (!Object.hasOwn(DEMOS, productValue)) {
     return NextResponse.json({ error: "محصول نامعتبر است" }, { status: 400 });
+  }
+
+  const demo = DEMOS[productValue];
+  if (!isDemoAvailable(productValue)) {
+    return NextResponse.json(
+      {
+        error: `دموی ${demo.name} فعلاً در دسترس نیست. برای دریافت دمو با ما تماس بگیرید.`,
+      },
+      { status: 400 }
+    );
   }
 
   if (!nameValue || nameValue.length > MAX_NAME_LENGTH) {

@@ -1,10 +1,13 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
+import { isDemoAvailable } from "@/lib/demos";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function DemoRequestForm({ product }: { product: string }) {
+  const available = isDemoAvailable(product);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
@@ -43,6 +46,22 @@ export default function DemoRequestForm({ product }: { product: string }) {
       setStatus("error");
       setErrorMessage("خطا، دوباره امتحان کنید");
     }
+  }
+
+  if (!available) {
+    return (
+      <div className="mt-6">
+        <p className="rounded-xl bg-bizko-teal/10 px-4 py-3 text-sm font-semibold text-bizko-navy">
+          برای دریافت دمو با ما تماس بگیرید.{" "}
+          <Link
+            href="/contact"
+            className="text-bizko-teal underline underline-offset-4 transition-colors hover:text-bizko-teal-light"
+          >
+            صفحه تماس
+          </Link>
+        </p>
+      </div>
+    );
   }
 
   return (

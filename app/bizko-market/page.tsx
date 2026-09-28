@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { WifiOff } from "lucide-react";
 import ScreenshotFrame from "@/components/ScreenshotFrame";
+import { isDemoAvailable } from "@/lib/demos";
 
 export const metadata: Metadata = {
   title: {
@@ -91,6 +92,8 @@ const CARD_THEMES = [
   },
 ];
 
+const MARKET_DEMO_AVAILABLE = isDemoAvailable("bizko-market");
+
 export default function BizkoMarketPage() {
   return (
     <>
@@ -109,12 +112,24 @@ export default function BizkoMarketPage() {
               به‌صورت کامل روی سیستم فروشگاه.
             </p>
             <div className="mt-4 md:mt-8">
-              <Link
-                href="/bizko-market/demo"
-                className="inline-block rounded-md bg-bizko-teal px-10 py-3 text-sm font-bold text-white transition-colors hover:bg-bizko-teal-light focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-bizko-teal focus-visible:ring-offset-2"
-              >
-                دریافت دمو
-              </Link>
+              {MARKET_DEMO_AVAILABLE ? (
+                <Link
+                  href="/bizko-market/demo"
+                  className="inline-block rounded-md bg-bizko-teal px-10 py-3 text-sm font-bold text-white transition-colors hover:bg-bizko-teal-light focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-bizko-teal focus-visible:ring-offset-2"
+                >
+                  دریافت دمو
+                </Link>
+              ) : (
+                <p className="text-sm font-semibold leading-7 text-bizko-navy/70">
+                  برای دریافت دمو با ما تماس بگیرید.{" "}
+                  <Link
+                    href="/contact"
+                    className="text-bizko-teal underline underline-offset-4 transition-colors hover:text-bizko-teal-light"
+                  >
+                    صفحه تماس
+                  </Link>
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -223,10 +238,12 @@ return isFeatured ? (
               دریافت مشاوره
             </Link>
             <Link
-              href="/bizko-market/demo"
+              href="/contact"
               className="w-full rounded-full bg-bizko-teal px-8 py-3 text-center font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light sm:w-auto"
             >
-              دریافت دمو
+              {MARKET_DEMO_AVAILABLE
+                ? "دریافت دمو"
+                : "برای دریافت دمو با ما تماس بگیرید"}
             </Link>
           </div>
         </div>

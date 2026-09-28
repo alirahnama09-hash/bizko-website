@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { DEMOS, BASE_URL, EMAIL_FROM } from "@/lib/demos";
+import { DEMOS, BASE_URL } from "@/lib/demos";
+import { EMAIL_FROM } from "@/lib/resend-config";
 import {
   verifyDemoApproveToken,
   isDemoApproveTokenUsed,

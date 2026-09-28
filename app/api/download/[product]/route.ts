@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { join } from "node:path";
 import { readFile } from "node:fs/promises";
-import { DEMOS } from "@/lib/demos";
+import { DEMOS, isDemoAvailable } from "@/lib/demos";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -16,11 +16,18 @@ export async function GET(
   { params }: { params: Promise<{ product: string }> }
 ) {
   const { product } = await params;
-  const relativePath = DOWNLOAD_PATHS[product];
-  if (!DEMOS[product] || !relativePath) {
+  if (
+    !Object.hasOwn(DEMOS, product) ||
+    !Object.hasOwn(DOWNLOAD_PATHS, product)
+  ) {
     return new NextResponse("demo not found", { status: 404 });
   }
 
+  if (!isDemoAvailable(product)) {
+    return new NextResponse("demo is not available", { status: 404 });
+  }
+
+  const relativePath = DOWNLOAD_PATHS[product];
   const filePath = join(process.cwd(), "public", relativePath);
   const buffer = await readFile(filePath).catch(() => null);
   if (!buffer) {
