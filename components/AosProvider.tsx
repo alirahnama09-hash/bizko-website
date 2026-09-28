@@ -13,12 +13,20 @@ export default function AosProvider({
   const pathname = usePathname();
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (!prefersReducedMotion) {
+      document.documentElement.dataset.aosInit = "1";
+    }
+
     AOS.init({
       duration: 700,
       easing: "ease-out",
       once: true,
       offset: 40,
-      disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      disable: prefersReducedMotion,
     });
   }, []);
 

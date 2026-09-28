@@ -16,3 +16,20 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
 }
+
+/* AOS fallback: keep [data-aos] content visible until AOS is actually
+   initialized (AosProvider sets data-aos-init on <html> right before AOS.init).
+   This prevents empty pages when JS is disabled or the AOS chunk fails. */
+html:not([data-aos-init]) [data-aos] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+@media (scripting: none) {
+  [data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
