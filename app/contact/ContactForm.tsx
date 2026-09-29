@@ -1,8 +1,7 @@
 "use client";
 
 import { FormEvent, useState, useId } from "react";
-
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import { EMAIL_REGEX } from "@/lib/validation";
 
 export default function ContactForm() {
   const [name, setName] = useState("");

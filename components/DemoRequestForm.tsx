@@ -3,8 +3,7 @@
 import { FormEvent, useState, useId } from "react";
 import Link from "next/link";
 import { isDemoAvailable } from "@/lib/demos";
-
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import { EMAIL_REGEX } from "@/lib/validation";
 
 export default function DemoRequestForm({ product }: { product: string }) {
   const available = isDemoAvailable(product);

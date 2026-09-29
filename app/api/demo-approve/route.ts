@@ -7,10 +7,10 @@ import {
   isDemoApproveTokenUsed,
   markDemoApproveTokenUsed,
 } from "@/lib/demo-approve-token";
+import { EMAIL_REGEX } from "@/lib/validation";
 
 export const runtime = "nodejs";
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const NOINDEX = "noindex";
 
 function escapeHtml(value: string): string {

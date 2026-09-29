@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { EMAIL_REGEX } from "@/lib/validation";
 
 export const runtime = "nodejs";
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_MESSAGE_LENGTH = 2000;
 const RATE_LIMIT_MAX = 3;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
@@ -21,8 +21,17 @@ function getClientAddress(request: Request): string {
   return request.headers.get("x-real-ip") ?? "unknown";
 }
 
+function pruneRateLimits(now: number): void {
+  for (const [key, hits] of rateLimits) {
+    if (hits.filter((t) => now - t < RATE_LIMIT_WINDOW_MS).length === 0) {
+      rateLimits.delete(key);
+    }
+  }
+}
+
 function isRateLimited(key: string): boolean {
   const now = Date.now();
+  pruneRateLimits(now);
   const hits = (rateLimits.get(key) ?? []).filter(
     (t) => now - t < RATE_LIMIT_WINDOW_MS
   );
@@ -32,6 +41,7 @@ function isRateLimited(key: string): boolean {
 
 function recordHit(key: string): void {
   const now = Date.now();
+  pruneRateLimits(now);
   const hits = (rateLimits.get(key) ?? []).filter(
     (t) => now - t < RATE_LIMIT_WINDOW_MS
   );

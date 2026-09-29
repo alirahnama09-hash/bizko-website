@@ -13,6 +13,10 @@ const NAV_LINKS = [
   { href: "/contact", label: "تماس با ما" },
 ];
 
+function isNavLinkActive(pathname: string, href: string): boolean {
+  return pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+}
+
 export default function Header() {
   const pathname = usePathname();
   const [openedPath, setOpenedPath] = useState<string | null>(null);
@@ -40,9 +44,7 @@ export default function Header() {
           <nav aria-label="منوی اصلی" className="hidden md:block">
             <ul className="flex items-center gap-6 text-sm">
               {NAV_LINKS.map((link) => {
-                const isActive =
-                  pathname === link.href ||
-                  (link.href !== "/" && pathname.startsWith(`${link.href}/`));
+                const isActive = isNavLinkActive(pathname, link.href);
                 return (
                   <li key={link.href}>
                     <Link
@@ -119,9 +121,7 @@ export default function Header() {
         >
           <ul className="flex flex-col gap-1 px-4 py-3">
             {NAV_LINKS.map((link) => {
-              const isActive =
-                pathname === link.href ||
-                (link.href !== "/" && pathname.startsWith(`${link.href}/`));
+              const isActive = isNavLinkActive(pathname, link.href);
               return (
                 <li key={link.href}>
                   <Link
