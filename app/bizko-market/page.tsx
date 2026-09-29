@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { WifiOff } from "lucide-react";
 import ScreenshotFrame from "@/components/ScreenshotFrame";
 import { isDemoAvailable } from "@/lib/demos";
+import { socialImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: {
@@ -22,12 +23,14 @@ export const metadata: Metadata = {
     siteName: "بیزکو",
     locale: "fa_IR",
     type: "website",
+    images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "بیزکو مارکت | نرم‌افزار مدیریت فروشگاه",
     description:
       "نرم‌افزار آفلاین مدیریت فروشگاه بیزکو مارکت؛ مدیریت موجودی و هشدار کمبود کالا، داشبورد فروش، گزارش‌گیری و مدیریت بدهی و مشتریان.",
+    images: [socialImage],
   },
 };
 

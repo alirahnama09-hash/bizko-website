@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Calculator } from "lucide-react";
 import ScreenshotFrame from "@/components/ScreenshotFrame";
+import { socialImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: {
@@ -21,12 +22,14 @@ export const metadata: Metadata = {
     siteName: "بیزکو",
     locale: "fa_IR",
     type: "website",
+    images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "بیزکوفود | نرم‌افزار مدیریت کافه و رستوران",
     description:
       "نرم‌افزار مدیریت کافه و رستوران بیزکوفود؛ مدیریت منو، سفارش‌گیری و میزها، موجودی مواد اولیه و گزارش‌گیری فروش.",
+    images: [socialImage],
   },
 };
 

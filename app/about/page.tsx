@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
+import { socialImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: {
@@ -20,12 +21,14 @@ export const metadata: Metadata = {
     siteName: "بیزکو",
     locale: "fa_IR",
     type: "website",
+    images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "درباره ما | بیزکو",
     description:
       "بیزکو مجموعه‌ای از نرم‌افزارهای مدیریت کسب‌وکار برای فروشگاه‌ها، کافه‌ها و رستوران‌ها؛ با هدف ساده‌سازی مدیریت روزمره.",
+    images: [socialImage],
   },
 };
 

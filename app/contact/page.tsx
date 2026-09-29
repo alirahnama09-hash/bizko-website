@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import ContactForm from "./ContactForm";
+import { socialImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: {
@@ -19,12 +20,14 @@ export const metadata: Metadata = {
     siteName: "بیزکو",
     locale: "fa_IR",
     type: "website",
+    images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "تماس با ما | بیزکو",
     description:
       "با گروه نرم‌افزاری بیزکو در تماس باشید؛ پاسخگویی به سوالات درباره بیزکو مارکت و بیزکوفود.",
+    images: [socialImage],
   },
 };
 
