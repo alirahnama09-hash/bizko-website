@@ -106,6 +106,32 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const resend = new Resend(apiKey);
+
+  if (demo.manualFulfillment === true) {
+    const { error } = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: OWNER_EMAIL,
+      replyTo: emailValue,
+      subject: `درخواست دمو — ${demo.name}`,
+      text:
+        `درخواست دمو برای ${demo.name} ثبت شد.\n\n` +
+        `نام: ${nameValue}\nایمیل: ${emailValue}\n\n` +
+        `این درخواست به‌صورت دستی پاسخ داده می‌شود؛ فایل دمو را خودتان برای مشتری ارسال کنید.`,
+    });
+
+    if (error) {
+      return NextResponse.json(
+        { error: "ثبت درخواست ممکن نشد، دوباره تلاش کنید" },
+        { status: 500 }
+      );
+    }
+
+    recordHit(clientKey);
+
+    return NextResponse.json({ ok: true });
+  }
+
   let token: string;
   try {
     token = createDemoApproveToken({
@@ -124,7 +150,6 @@ export async function POST(request: NextRequest) {
     token
   )}`;
 
-  const resend = new Resend(apiKey);
   const { error } = await resend.emails.send({
     from: EMAIL_FROM,
     to: OWNER_EMAIL,

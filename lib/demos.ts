@@ -2,6 +2,9 @@ export interface Demo {
   name: string;
   file: string;
   available: boolean;
+  /** When true, demo requests are fulfilled manually by the owner:
+      no approve link, no download link, no file served. */
+  manualFulfillment?: boolean;
 }
 
 export const DEMOS: Record<string, Demo> = {
@@ -14,6 +17,12 @@ export const DEMOS: Record<string, Demo> = {
     name: "بیزکوفود",
     file: "/api/download/bizcofood",
     available: true,
+  },
+  "bizcofood-mobile": {
+    name: "بیزکوفود نسخه موبایل",
+    file: "",
+    available: true,
+    manualFulfillment: true,
   },
 };
 

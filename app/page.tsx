@@ -59,6 +59,12 @@ export default function Home() {
               >
                 بیزکوفود
               </Link>
+              <Link
+                href="/bizcofood-mobile"
+                className="w-full rounded-full bg-bizko-teal px-8 py-3 text-center font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light sm:w-auto"
+              >
+                بیزکوفود موبایل
+              </Link>
             </div>
           </div>
 
@@ -81,7 +87,7 @@ export default function Home() {
       </HeroSection>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        <div className="grid gap-6 sm:grid-cols-2 lg:gap-8">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           <div
             data-aos="fade-up"
             data-aos-delay="0"
@@ -150,6 +156,43 @@ export default function Home() {
             </p>
             <Link
               href="/bizcofood"
+              className="relative mt-6 inline-flex items-center self-start rounded-full bg-bizko-teal px-7 py-2.5 text-sm font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light"
+            >
+              بیشتر بدانید
+            </Link>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-duration="700"
+            className="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-bl from-bizko-navy via-[#14305a] to-bizko-teal/80 p-8 text-white shadow-xl transition-transform duration-300 hover:-translate-y-1"
+          >
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-bizko-teal/30 blur-2xl"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-bizko-navy/70"
+            />
+            <div className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-white/15">
+              <Image
+                src="/bizcofood-logo.png"
+                alt="لوگوی بیزکوفود نسخه موبایل"
+                width={1254}
+                height={1254}
+                sizes="56px"
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <h2 className="font-heading relative mt-5 text-2xl font-black text-white">بیزکوفود نسخه موبایل</h2>
+            <p className="relative mt-3 font-light leading-8 text-white/70">
+              نرم‌افزار اندرویدی مدیریت کافه و رستوران‌های کوچک — منو،
+              سفارش، صندوق و گزارش، همه از روی گوشی.
+            </p>
+            <Link
+              href="/bizcofood-mobile"
               className="relative mt-6 inline-flex items-center self-start rounded-full bg-bizko-teal px-7 py-2.5 text-sm font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light"
             >
               بیشتر بدانید

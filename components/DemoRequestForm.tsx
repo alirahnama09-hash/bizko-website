@@ -2,11 +2,12 @@
 
 import { FormEvent, useState, useId } from "react";
 import Link from "next/link";
-import { isDemoAvailable } from "@/lib/demos";
+import { DEMOS, isDemoAvailable } from "@/lib/demos";
 import { EMAIL_REGEX } from "@/lib/validation";
 
 export default function DemoRequestForm({ product }: { product: string }) {
   const available = isDemoAvailable(product);
+  const manual = DEMOS[product]?.manualFulfillment === true;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
@@ -131,8 +132,9 @@ export default function DemoRequestForm({ product }: { product: string }) {
           role="status"
           className="rounded-xl bg-bizko-teal/10 px-4 py-3 text-sm font-semibold text-bizko-navy"
         >
-          درخواست شما ثبت شد؛ پس از تأیید، لینک دانلود به ایمیل شما ارسال
-          می‌شود.
+          {manual
+            ? "درخواست شما ثبت شد؛ دمو به‌زودی برای شما ارسال می‌شود."
+            : "درخواست شما ثبت شد؛ پس از تأیید، لینک دانلود به ایمیل شما ارسال می‌شود."}
         </p>
       )}
       {status === "error" && (
