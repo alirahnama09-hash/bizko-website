@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: "/about", label: "درباره ما" },
   { href: "/bizko-market", label: "بیزکو مارکت" },
   { href: "/bizcofood", label: "بیزکوفود" },
+  { href: "/bizcofood-mobile", label: "بیزکوفود موبایل" },
   { href: "/contact", label: "تماس با ما" },
 ];
 

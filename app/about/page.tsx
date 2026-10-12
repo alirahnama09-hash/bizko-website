@@ -158,6 +158,12 @@ export default function AboutPage() {
             >
               بیزکوفود
             </Link>
+            <Link
+              href="/bizcofood-mobile"
+              className="w-full rounded-full bg-bizko-teal px-8 py-3 text-center font-bold text-bizko-navy transition-colors hover:bg-bizko-teal-light sm:w-auto"
+            >
+              بیزکوفود موبایل
+            </Link>
           </div>
         </div>
       </section>
