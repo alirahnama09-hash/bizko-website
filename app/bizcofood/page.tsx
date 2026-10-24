@@ -42,7 +42,7 @@ const softwareLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Windows",
   url: "https://bizko.ir/bizcofood",
-  inLanguage: "fa",
+  inLanguage: "fa-IR",
   publisher: {
     "@type": "Organization",
     "@id": "https://bizko.ir/#organization",

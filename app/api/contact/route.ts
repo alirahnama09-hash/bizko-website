@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { EMAIL_REGEX } from "@/lib/validation";
+import { EMAIL_FROM } from "@/lib/resend-config";
+import { OWNER_EMAIL } from "@/lib/demos";
 
 export const runtime = "nodejs";
 
@@ -102,8 +104,8 @@ export async function POST(request: Request) {
 
   const resend = new Resend(apiKey);
   const { error } = await resend.emails.send({
-    from: "onboarding@resend.dev",
-    to: ["bizkogroups@gmail.com"],
+    from: EMAIL_FROM,
+    to: OWNER_EMAIL,
     replyTo: emailValue,
     subject: "پیام جدید از فرم تماس بیزکو",
     text: `نام: ${nameValue}\nایمیل: ${emailValue}\n\nپیام:\n${messageValue}`,

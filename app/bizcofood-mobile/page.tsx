@@ -39,8 +39,9 @@ const softwareLd = {
   description:
     "بیزکوفود نسخه موبایل؛ نرم‌افزار اندرویدی مدیریت کافه و رستوران‌های کوچک — منو، سفارش، صندوق، گزارش فروش و هزینه‌ها؛ چند روز رایگان امتحان کنید، سپس با اشتراک سالانه.",
   applicationCategory: "BusinessApplication",
+  operatingSystem: "Android",
   url: "https://bizko.ir/bizcofood-mobile",
-  inLanguage: "fa",
+  inLanguage: "fa-IR",
   publisher: {
     "@type": "Organization",
     "@id": "https://bizko.ir/#organization",
