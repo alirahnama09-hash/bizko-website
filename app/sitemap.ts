@@ -40,5 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    // TODO: re-add /privacy and /imprint once their `robots: { index: false }`
+    // is removed (i.e. when the real policy and legal data are published).
   ];
 }

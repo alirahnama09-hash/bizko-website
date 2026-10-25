@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function AosProvider({
@@ -13,25 +12,40 @@ export default function AosProvider({
   const pathname = usePathname();
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    let cancelled = false;
 
-    if (!prefersReducedMotion) {
-      document.documentElement.dataset.aosInit = "1";
+    // Load AOS after hydration so it does not render-block the page.
+    async function init() {
+      const AOS = (await import("aos")).default;
+      if (cancelled) return;
+
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (!prefersReducedMotion) {
+        document.documentElement.dataset.aosInit = "1";
+      }
+
+      AOS.init({
+        duration: 700,
+        easing: "ease-out",
+        once: true,
+        offset: 40,
+        disable: prefersReducedMotion,
+      });
     }
 
-    AOS.init({
-      duration: 700,
-      easing: "ease-out",
-      once: true,
-      offset: 40,
-      disable: prefersReducedMotion,
-    });
+    void init();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => AOS.refreshHard(), 150);
+    const timer = window.setTimeout(() => {
+      void import("aos").then(({ default: AOS }) => AOS.refreshHard());
+    }, 150);
     return () => window.clearTimeout(timer);
   }, [pathname]);
 

@@ -77,8 +77,7 @@ export default function AboutPage() {
               alt="لوگوی بیزکو"
               width={1024}
               height={1024}
-              priority
-              sizes="96px"
+              sizes="(max-width: 639px) 80px, 96px"
               className="h-20 w-20 rounded-2xl shadow-[0_14px_40px_-8px_rgba(4,15,31,0.85)] sm:h-24 sm:w-24"
             />
           </div>

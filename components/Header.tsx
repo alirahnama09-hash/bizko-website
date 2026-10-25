@@ -32,8 +32,7 @@ export default function Header() {
             alt="لوگوی بیزکو"
             width={40}
             height={40}
-            priority
-            sizes="40px"
+            sizes="(max-width: 639px) 36px, 40px"
             className="h-9 w-9 shrink-0 sm:h-10 sm:w-10"
           />
           <span className="whitespace-nowrap text-base font-extrabold text-bizko-navy sm:text-xl">

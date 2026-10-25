@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AosProvider from "@/components/AosProvider";
+import { sameAs } from "@/lib/site";
 import "./globals.css";
 
 const vazirmatn = localFont({
@@ -43,6 +44,7 @@ const organizationLd = {
       },
       email: "info@bizko.ir",
       telephone: "+989381979753",
+      ...(sameAs.length > 0 ? { sameAs } : {}),
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+989381979753",
@@ -75,9 +77,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
         />
+        <a
+          href="#main"
+          className="sr-only rounded-md bg-bizko-teal px-4 py-2 font-bold text-bizko-navy focus:not-sr-only focus:fixed focus:right-4 focus:top-4 focus:z-[100]"
+        >
+          پرش به محتوای اصلی
+        </a>
         <Header />
         <AosProvider>
-          <main className="flex-1">{children}</main>
+          <main id="main" className="flex-1">
+            {children}
+          </main>
         </AosProvider>
         <Footer />
       </body>

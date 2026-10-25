@@ -1,0 +1,14 @@
+# بیزکو
+
+> گروه نرم‌افزاری بیزکو — نرم‌افزارهای مدیریت کسب‌وکار برای فروشگاه‌ها، کافه‌ها و رستوران‌ها؛ شامل بیزکو مارکت، بیزکوفود و بیزکوفود نسخه موبایل.
+
+## Key pages
+
+- [خانه](https://bizko.ir/)
+- [درباره ما](https://bizko.ir/about)
+- [بیزکو مارکت](https://bizko.ir/bizko-market)
+- [بیزکوفود](https://bizko.ir/bizcofood)
+- [بیزکوفود نسخه موبایل](https://bizko.ir/bizcofood-mobile)
+- [تماس با ما](https://bizko.ir/contact)
+- [حریم خصوصی](https://bizko.ir/privacy)
+- [اطلاعات حقوقی](https://bizko.ir/imprint)
